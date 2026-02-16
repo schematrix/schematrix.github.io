@@ -24,6 +24,7 @@
         if (window.innerWidth <= 768) {
           nav.classList.remove('open');
           mobileToggle.textContent = 'Menü';
+          mobileToggle.setAttribute('aria-expanded', 'false');
         }
       });
     });
