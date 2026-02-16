@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schematrix | ULAQ — Geliştirme Platformu</title>
+  <meta name="description" content="ULAQ — LoRa ve nRF52840 tabanlı açık kaynak geliştirme platformu. Meshtastic uyumlu." />
+  <meta name="theme-color" content="#F2F0EB" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="sidebar-collapsed">
+
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="./index.html"><span class="top-bar-logo">Schematrix</span></a>
+      <span class="top-bar-tagline">Farklı düşünenler için farklı teknoloji</span>
+    </div>
+  </div>
+
+  <button id="menuToggle" class="menu-toggle" type="button" aria-label="Menüyü aç veya kapat" aria-expanded="false">Menüyü Aç</button>
+
+  <header>
+    <div class="header-content">
+      <div class="nav-top">
+        <div class="mobile-bar">
+          <a href="./index.html" class="logo">Schematrix</a>
+          <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menü">Menü</button>
+        </div>
+        <a href="./index.html" class="logo" id="desktopLogo">Schematrix</a>
+        <nav>
+          <a href="./index.html">Ana Sayfa</a>
+          <a href="./products.html" class="active">Ürünler</a>
+          <a href="./about.html">Hakkımda</a>
+          <a href="./gallery.html">Galeri</a>
+          <div class="nav-separator"></div>
+          <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
+          <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="color-strip"></div>
+
+  <!-- ÜRÜN DETAY -->
+  <section class="page">
+    <div class="container product-detail">
+
+      <div class="section-label fade-up">Geliştirme Platformu</div>
+      <h2 class="section-title fade-up">ULAQ Mesh Device</h2>
+      <p class="section-subtitle fade-up">Sadece bir haberleşme cihazı değil — sınırsız proje imkânı sunan açık kaynak geliştirme platformu.</p>
+
+      <div class="product-detail-grid">
+        <div class="product-gallery reveal">
+          <img src="https://placehold.co/800x800/1E2A5E/FFFFFF?text=ULAQ+1" alt="ULAQ fotoğraf 1" />
+          <img src="https://placehold.co/800x800/1A1A1A/FFFFFF?text=ULAQ+2" alt="ULAQ fotoğraf 2" />
+          <img src="https://placehold.co/800x800/EF4444/FFFFFF?text=ULAQ+3" alt="ULAQ fotoğraf 3" />
+          <img src="https://placehold.co/800x800/EBE8E2/1A1A1A?text=ULAQ+4" alt="ULAQ fotoğraf 4" />
+        </div>
+
+        <aside class="product-summary reveal">
+          <h3>ULAQ</h3>
+          <p>ULAQ, Schematrix tarafından geliştirilen LoRa + nRF52840 tabanlı bir geliştirme kartıdır. Meshtastic ile tam uyumludur; ancak ağa dahil olabilmesi için Meshtastic sitesindeki adımlarla firmware kurulumu yapılmalıdır.</p>
+          <p>Yalnızca hazır bir haberleşme cihazı değil; Meshtastic tabanlı projeler, IoT prototipleri ve saha iletişim senaryoları için esnek bir geliştirme platformudur. Kurulumun detaylı halini bu sayfanın aşağı bölümünde bulabilirsiniz.</p>
+          <div class="product-price">2,450₺</div>
+          <a href="https://shopier.com/your-ulaq-product-link" class="btn btn-accent" target="_blank" style="width:100%;margin-bottom:10px;">Shopier'de Satın Al</a>
+          <a href="https://instagram.com/ulaq.tech" class="btn btn-secondary" target="_blank" style="width:100%;margin-bottom:10px;">@ulaq.tech Instagram</a>
+          <a href="./products.html" class="btn btn-secondary" style="width:100%;">Ürünlere Dön</a>
+        </aside>
+      </div>
+
+      <!-- TEKNİK ÖZELLİKLER -->
+      <div class="reveal" style="margin-top: 24px;">
+        <div class="section-label">Teknik</div>
+        <h3 style="font-family:'Clash Display',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:8px;">Donanım Özellikleri</h3>
+        <p style="font-size:15px; color:var(--text-sub); line-height:1.7; max-width:580px; margin-bottom:8px;">ULAQ, Nordic nRF52840 işlemci ve Semtech LoRa radyo modülü üzerine inşa edilmiş bir geliştirme kartıdır. Meshtastic açık kaynak firmware'i ile çalışarak dünya genelindeki Meshtastic komünitesine tam uyumlu bir donanım sunar. Bluetooth 5.0, USB-C ve GPIO pinleri sayesinde harici sensör ve modüllerle kolayca genişletilebilir.</p>
+
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-label">İşlemci</div>
+            <div class="spec-value">nRF52840</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Radyo</div>
+            <div class="spec-value">LoRa SX1262</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Firmware</div>
+            <div class="spec-value">Meshtastic</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Topoloji</div>
+            <div class="spec-value">Mesh Network</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Bağlantı</div>
+            <div class="spec-value">BLE 5.0 + USB-C</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Geliştiren</div>
+            <div class="spec-value">Schematrix</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GELİŞTİRME PLATFORMU BANNER -->
+  <section class="banner-navy">
+    <div class="container">
+      <h2 class="reveal">Sadece Haberleşme Değil. Bir Geliştirme Platformu.</h2>
+      <p class="reveal">ULAQ'ın sunduğu nRF52840 + LoRa kombinasyonu sayesinde hayal gücünüz kadar geniş bir proje yelpazesi elinizin altında. Meshtastic dışında da düşünün.</p>
+    </div>
+  </section>
+
+  <!-- NE YAPILABİLİR? -->
+  <section class="page">
+    <div class="container product-detail">
+      <div class="section-label reveal">Olasılıklar</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">ULAQ ile Neler Yapılabilir?</h3>
+      <p class="section-subtitle reveal">Tek bir kart, onlarca proje. İşte ULAQ üzerinde gerçekleştirebileceğiniz bazı senaryolar:</p>
+
+      <div class="usecase-grid stagger">
+        <div class="usecase-item reveal">
+          <span class="uc-icon">01</span>
+          <h4>Mesh Haberleşme</h4>
+          <p>Meshtastic ile altyapısız mesajlaşma. Afet, kamp, etkinlik senaryolarında.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">02</span>
+          <h4>GPS Tracker</h4>
+          <p>Araç, evcil hayvan veya kargo takibi. LoRa menzili ile geniş alan kapsama.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">03</span>
+          <h4>IoT Sensör Ağı</h4>
+          <p>Sıcaklık, nem, hava kalitesi — uzak noktalardaki verileri merkeze iletin.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">04</span>
+          <h4>Tarım Otomasyonu</h4>
+          <p>Toprak nemi, sulama kontrolü. Tarlada GSM yoksa bile çalışır.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">05</span>
+          <h4>Dağ & Doğa</h4>
+          <p>Şebeke dışı alanlarda grup iletişimi. Trekking, arama-kurtarma.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">06</span>
+          <h4>Prototipleme</h4>
+          <p>nRF52840 + LoRa ile kendi projenizi geliştirin. GPIO, BLE, USB-C hazır.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEJ BANNER -->
+  <section class="banner-bej">
+    <div class="container">
+      <h2 class="reveal">Meshtastic Komünitesine Katkı</h2>
+      <p class="reveal">ULAQ, Meshtastic ekosistemiyle tam uyumludur. Dünya genelindeki Meshtastic kullanıcılarıyla doğrudan haberleşir. Schematrix olarak bu projeyi Türkiye'den küresel topluluğa bir katkı olarak geliştirdik.</p>
+    </div>
+  </section>
+
+  <!-- VİDEOLAR -->
+  <section class="page">
+    <div class="container product-detail">
+      <div class="section-label reveal">Keşfet</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">ULAQ'a Yakından Bakın</h3>
+      <p class="section-subtitle reveal">Cihazın özelliklerini ve kullanım senaryolarını keşfedin.</p>
+
+      <!-- Video 1 -->
+      <div class="video-text-row reveal">
+        <div class="vtr-video">
+          <video autoplay muted loop playsinline preload="auto" controlslist="nodownload noplaybackrate nofullscreen" disablepictureinpicture>
+            <source src="./ulak_tanitim1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="vtr-text">
+          <h3>Altyapısız İletişim</h3>
+          <p>GSM veya internet bağlantısı olmayan ortamlarda cihazdan cihaza doğrudan mesajlaşma yapar. ULAQ, LoRa fiziksel katmanında düşük bant genişliğinde ama yüksek dayanıklılıkta veri iletir; her düğüm aynı anda hem alıcı hem aktarıcı olarak çalışır.</p>
+          <p>Mesajlar ağda tek bir merkeze gitmez; komşu düğümler üzerinden çok atlamalı (multi-hop) şekilde taşınır. Bu yapı kapsama alanını zincirleme büyütür, tek nokta arızasına bağımlılığı azaltır ve afet/saha senaryolarında iletişimin devam etmesini sağlar.</p>
+          <p>Depremde baz istasyonları çöktüğünde veya dağda telefon çekmediğinde, ULAQ ağındaki cihazlar yerel bir iletişim omurgası oluşturarak temel mesaj trafiğini ayakta tutar.</p>
+          <div>
+            <span class="tag">Afet Hazırlık</span>
+            <span class="tag">Saha İletişimi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2 (ters) -->
+      <div class="video-text-row reverse reveal">
+        <div class="vtr-video">
+          <video autoplay muted loop playsinline preload="auto" controlslist="nodownload noplaybackrate nofullscreen" disablepictureinpicture>
+            <source src="./ulak_tanitim5.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="vtr-text">
+          <h3>Geliştirme Kartı Olarak ULAQ</h3>
+          <p>Meshtastic dışında da düşünün: ULAQ'ın nRF52840 işlemcisi, LoRa radyosu ve GPIO pinleri sayesinde kendi IoT projenizi sıfırdan geliştirebilirsiniz. nRF52840 tarafı uygulama mantığını, sensör okuma ve görev zamanlamasını yönetirken; LoRa katmanı uzun menzilde veri taşımayı üstlenir.</p>
+          <p>BLE üzerinden mobil uygulama konfigürasyonu, USB-C üzerinden debug/firmware güncelleme ve GPIO hattı üzerinden harici modül bağlantısı aynı platformda birleşir. Bu sayede tek kartla prototipten saha testine kadar hızlı bir geliştirme döngüsü kurabilirsiniz.</p>
+          <p>Sensör ağı, GPS takip, uzaktan izleme veya tamamen yeni bir fikir: yazılım katmanını değiştirerek aynı donanımı farklı ürün senaryolarına uyarlamak mümkündür.</p>
+          <div>
+            <span class="tag">nRF52840</span>
+            <span class="tag">LoRa</span>
+            <span class="tag">Platform</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video-text-row reveal">
+        <div class="vtr-video">
+          <video autoplay muted loop playsinline preload="auto" controlslist="nodownload noplaybackrate nofullscreen" disablepictureinpicture>
+            <source src="./ulak_tanitim3.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="vtr-text">
+          <h3>Dayanıklı, Bağımsız, Özgür</h3>
+          <p>Saha kullanımına uygun tasarım, düşük güç tüketimi ve kararlı bağlantı davranışı ULAQ'ın temel karakteri. Cihaz, görev yoğunluğuna göre enerji tüketimini dengeleyerek uzun süreli kullanımda pil ömrünü korumaya odaklanır.</p>
+          <p>Ağ tarafında paket tekrarları, yönlendirme davranışı ve gönderim aralığı gibi parametreler uygulama ihtiyacına göre optimize edilebilir. Bu sayede aynı cihaz; düşük gecikme isteyen senaryolarla ultra düşük güç isteyen senaryolar arasında farklı profillerle çalıştırılabilir.</p>
+          <p>Açık kaynak yaklaşımı sayesinde firmware katmanını düzenleyebilir, telemetri formatını değiştirebilir ve cihazı kendi altyapınıza entegre edebilirsiniz. Bağımsız iletişimin bireysel bir hak olduğu fikri, ULAQ'ın teknik mimarisine doğrudan yansır.</p>
+          <div>
+            <span class="tag">Açık Kaynak</span>
+            <span class="tag">Dayanıklı</span>
+            <span class="tag">Bağımsız</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 Schematrix — Bağımsız Teknoloji Üretimi</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/schematrix.io" target="_blank">Instagram</a>
+          <span>·</span>
+          <a href="mailto:info@schematrix.io">info@schematrix.io</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
