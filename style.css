@@ -272,7 +272,7 @@ body.sidebar-collapsed .menu-toggle { left: 16px; }
 
 .hero-video-section {
   padding: 0;
-  background: #000;
+  background: var(--bg);
 }
 
 .hero-video-wrap {
@@ -862,9 +862,12 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
 .mobile-bar { display: none; }
 
 @media (max-width: 768px) {
-  body { padding-left: 0; }
+  body {
+    padding-left: 0;
+    padding-top: 72px;
+  }
 
-  .top-bar { padding: 8px 0; }
+  .top-bar { display: none; }
   .top-bar-inner { padding: 0 20px; }
   .top-bar-logo { font-size: 17px; }
   .top-bar-tagline { display: none; }
@@ -890,6 +893,8 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   }
 
   .mobile-bar .logo { font-size: 20px; color: var(--bej-light); }
+  .mobile-bar .logo::after { display: none; }
+  #desktopLogo { display: none; }
 
   .mobile-toggle {
     background: none; border: 1px solid var(--border-navy);
@@ -909,9 +914,9 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   .nav-separator { margin: 8px 4px; }
   .menu-toggle { display: none; }
 
-  .hero { padding: 88px 0 60px; }
+  .hero { padding: 64px 0 36px; }
   .hero h1 { font-size: 36px; letter-spacing: -1.5px; }
-  .page { padding: 52px 0; }
+  .page { padding: 36px 0; }
   .section-title { font-size: 26px; letter-spacing: -1px; }
   .container { padding: 0 20px; }
   .product-grid, .product-gallery { grid-template-columns: 1fr; }
@@ -921,6 +926,23 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
   .scroll-hint { display: none; }
   .spec-grid { grid-template-columns: 1fr 1fr; }
+
+  .hero-video-wrap {
+    max-height: none;
+    height: clamp(240px, 56vw, 360px);
+    background: transparent;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Mobile'da videonun içine gömülü siyah bantları üst-alt kırp */
+    clip-path: inset(12% 0 12% 0);
+    transform: scale(1.34);
+    transform-origin: center center;
+  }
 }
 
 @media (max-width: 480px) {
