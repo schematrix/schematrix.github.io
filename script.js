@@ -62,6 +62,11 @@
       entries.forEach((entry) => {
         const video = entry.target;
         if (entry.isIntersecting) {
+          const source = video.querySelector('source[data-src]');
+          if (source && !source.src) {
+            source.src = source.dataset.src;
+            video.load();
+          }
           video.muted = true;
           video.loop = true;
           video.play().catch(() => {});
