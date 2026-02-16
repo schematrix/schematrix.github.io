@@ -1,1 +1,1 @@
-# schematrixsite.github.io
+# schematrix.github.io
