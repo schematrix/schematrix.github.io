@@ -986,3 +986,113 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   background: #000;
   pointer-events: none;
 }
+
+.manifesto-shell {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.manifesto-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(245,242,235,.96) 0%, rgba(234,228,213,.92) 100%);
+  border: 1px solid var(--border-bej);
+  border-radius: 28px;
+  padding: 56px;
+  box-shadow: 0 24px 60px rgba(30,42,94,.08);
+}
+
+.manifesto-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(30,42,94,.08), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.4), transparent 54%);
+  pointer-events: none;
+}
+
+.manifesto-head,
+.manifesto-body {
+  position: relative;
+  z-index: 1;
+}
+
+.manifesto-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.manifesto-kicker::before {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: var(--navy);
+}
+
+.manifesto-title {
+  max-width: 700px;
+  margin-bottom: 18px;
+  color: var(--navy-deep);
+  font-family: 'Clash Display', sans-serif;
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: 700;
+  line-height: .95;
+  letter-spacing: -2px;
+}
+
+.manifesto-intro {
+  max-width: 620px;
+  margin-bottom: 42px;
+  color: var(--text-sub);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.manifesto-body {
+  display: grid;
+  gap: 26px;
+}
+
+.manifesto-body p {
+  max-width: 760px;
+  color: var(--text-navy);
+  font-size: 18px;
+  line-height: 1.95;
+}
+
+.manifesto-body p:first-child {
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1.82;
+}
+
+.manifesto-body strong {
+  color: var(--navy-deep);
+}
+
+@media (max-width: 768px) {
+  .manifesto-card {
+    border-radius: 20px;
+    padding: 30px 22px;
+  }
+
+  .manifesto-title {
+    font-size: 42px;
+    letter-spacing: -1.2px;
+  }
+
+  .manifesto-intro,
+  .manifesto-body p,
+  .manifesto-body p:first-child {
+    font-size: 16px;
+    line-height: 1.86;
+  }
+}
