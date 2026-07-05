@@ -1,87 +1,74 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schematrix | Meschy — Geliştirme Platformu</title>
-  <meta name="description" content="Meschy — LoRa ve nRF52840 tabanlı açık kaynak geliştirme platformu. Meshtastic uyumlu." />
+  <title>Schematrix | Meschy — Development Platform</title>
+  <meta name="description" content="Meschy — an open-source LoRa and nRF52840-based development platform. Meshtastic-compatible." />
   <meta name="theme-color" content="#F2F0EB" />
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body class="sidebar-collapsed">
-
-  <div class="top-bar">
-    <div class="top-bar-inner">
-      <a href="./index.html"><span class="top-bar-logo">Schematrix</span></a>
-      <span class="top-bar-tagline">Farklı düşünenler için farklı teknoloji</span>
-    </div>
-  </div>
-
-  <button id="menuToggle" class="menu-toggle" type="button" aria-label="Menüyü aç veya kapat" aria-expanded="false">Menüyü Aç</button>
+<body>
 
   <header>
     <div class="header-content">
       <div class="nav-top">
-        <div class="mobile-bar">
-          <a href="./index.html" class="logo">Schematrix</a>
-          <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menü">Menü</button>
-        </div>
-        <a href="./index.html" class="logo" id="desktopLogo">Schematrix</a>
+        <a href="./index.html" class="logo">Schematrix</a>
         <nav>
-          <a href="./index.html">Ana Sayfa</a>
-          <a href="./products.html" class="active">Ürünler</a>
+          <a href="./index.html">Home</a>
+          <a href="./projects.html" class="active">Projects</a>
           <a href="./manifesto.html">Manifesto</a>
-          <a href="./about.html">Hakkımda</a>
+          <a href="./about.html">About</a>
           <div class="nav-separator"></div>
           <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
           <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
         </nav>
+        <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">Menu</button>
       </div>
     </div>
   </header>
 
   <div class="color-strip"></div>
 
-  <!-- ÜRÜN DETAY -->
+  <!-- PROJECT DETAIL -->
   <section class="page">
-    <div class="container product-detail">
+    <div class="container project-detail">
 
-      <div class="section-label fade-up">Geliştirme Platformu</div>
+      <div class="section-label fade-up">Development Platform</div>
       <h2 class="section-title fade-up">Meschy Mesh Device</h2>
-      <p class="section-subtitle fade-up">Sadece bir haberleşme cihazı değil — sınırsız proje imkânı sunan açık kaynak geliştirme platformu.</p>
+      <p class="section-subtitle fade-up">Not just a communication device — an open-source development platform for endless projects.</p>
 
-      <div class="product-detail-grid">
-        <div class="product-gallery reveal">
-          <img src="https://placehold.co/800x800/1E2A5E/FFFFFF?text=Meschy+1" alt="Meschy fotoğraf 1" />
-          <img src="https://placehold.co/800x800/1A1A1A/FFFFFF?text=Meschy+2" alt="Meschy fotoğraf 2" />
-          <img src="https://placehold.co/800x800/EF4444/FFFFFF?text=Meschy+3" alt="Meschy fotoğraf 3" />
-          <img src="https://placehold.co/800x800/EBE8E2/1A1A1A?text=Meschy+4" alt="Meschy fotoğraf 4" />
+      <div class="project-detail-grid">
+        <div class="project-gallery reveal">
+          <img src="https://placehold.co/800x800/1E2A5E/FFFFFF?text=Meschy+1" alt="Meschy photo 1" />
+          <img src="https://placehold.co/800x800/151F45/FFFFFF?text=Meschy+2" alt="Meschy photo 2" />
+          <img src="https://placehold.co/800x800/2D3E80/FFFFFF?text=Meschy+3" alt="Meschy photo 3" />
+          <img src="https://placehold.co/800x800/EBE8E2/1A1A1A?text=Meschy+4" alt="Meschy photo 4" />
         </div>
 
-        <aside class="product-summary reveal">
+        <aside class="project-summary reveal">
           <h3>Meschy</h3>
-          <p>Meschy, Schematrix tarafından geliştirilen LoRa + nRF52840 tabanlı bir geliştirme kartıdır. Meshtastic ile tam uyumludur; ancak ağa dahil olabilmesi için Meshtastic sitesindeki adımlarla firmware kurulumu yapılmalıdır.</p>
-          <p>Yalnızca hazır bir haberleşme cihazı değil; Meshtastic tabanlı projeler, IoT prototipleri ve saha iletişim senaryoları için esnek bir geliştirme platformudur. Kurulumun detaylı halini bu sayfanın aşağı bölümünde bulabilirsiniz.</p>
-          <div class="product-price">Daha belirlenmedi</div>
-          <a href="https://shopier.com/your-meschy-product-link" class="btn btn-accent" target="_blank" style="width:100%;margin-bottom:10px;">Shopier'de Satın Al</a>
-          <a href="https://instagram.com/meschy.tech" class="btn btn-secondary" target="_blank" style="width:100%;margin-bottom:10px;">@meschy.tech Instagram</a>
-          <a href="./products.html" class="btn btn-secondary" style="width:100%;">Ürünlere Dön</a>
+          <p>Meschy is a LoRa + nRF52840-based development board built by Schematrix. It's fully compatible with Meshtastic, though it needs the firmware setup described on the Meshtastic site to join the network.</p>
+          <p>It's not just a ready-made communication device — it's a flexible development platform for Meshtastic-based projects, IoT prototypes, and field communication scenarios. You'll find the full setup details further down this page.</p>
+          <div class="project-status">Open Source Project</div>
+          <a href="https://instagram.com/meschy.tech" class="btn btn-accent" target="_blank" style="width:100%;margin-bottom:10px;">@meschy.tech on Instagram</a>
+          <a href="./projects.html" class="btn btn-secondary" style="width:100%;">Back to Projects</a>
         </aside>
       </div>
 
-      <!-- TEKNİK ÖZELLİKLER -->
+      <!-- TECH SPECS -->
       <div class="reveal" style="margin-top: 24px;">
-        <div class="section-label">Teknik</div>
-        <h3 style="font-family:'Clash Display',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:8px;">Donanım Özellikleri</h3>
-        <p style="font-size:15px; color:var(--text-sub); line-height:1.7; max-width:580px; margin-bottom:8px;">Meschy, Nordic nRF52840 işlemci ve Semtech LoRa radyo modülü üzerine inşa edilmiş bir geliştirme kartıdır. Meshtastic açık kaynak firmware'i ile çalışarak dünya genelindeki Meshtastic komünitesine tam uyumlu bir donanım sunar. Bluetooth 5.0, USB-C ve GPIO pinleri sayesinde harici sensör ve modüllerle kolayca genişletilebilir.</p>
+        <div class="section-label">Technical</div>
+        <h3 style="font-family:'Clash Display',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:8px;">Hardware Specifications</h3>
+        <p style="font-size:15px; color:var(--text-sub); line-height:1.7; max-width:580px; margin-bottom:8px;">Meschy is a development board built around the Nordic nRF52840 processor and a Semtech LoRa radio module. Running the Meshtastic open-source firmware, it's fully compatible with the global Meshtastic community. Bluetooth 5.0, USB-C, and GPIO pins make it easy to extend with external sensors and modules.</p>
 
         <div class="spec-grid">
           <div class="spec-item">
-            <div class="spec-label">İşlemci</div>
+            <div class="spec-label">Processor</div>
             <div class="spec-value">nRF52840</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Radyo</div>
+            <div class="spec-label">Radio</div>
             <div class="spec-value">LoRa SX1262</div>
           </div>
           <div class="spec-item">
@@ -89,15 +76,15 @@
             <div class="spec-value">Meshtastic</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Topoloji</div>
+            <div class="spec-label">Topology</div>
             <div class="spec-value">Mesh Network</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Bağlantı</div>
+            <div class="spec-label">Connectivity</div>
             <div class="spec-value">BLE 5.0 + USB-C</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Geliştiren</div>
+            <div class="spec-label">Built by</div>
             <div class="spec-value">Schematrix</div>
           </div>
         </div>
@@ -106,51 +93,51 @@
     </div>
   </section>
 
-  <!-- GELİŞTİRME PLATFORMU BANNER -->
+  <!-- DEVELOPMENT PLATFORM BANNER -->
   <section class="banner-navy">
     <div class="container">
-      <h2 class="reveal">Sadece Haberleşme Değil. Bir Geliştirme Platformu.</h2>
-      <p class="reveal">Meschy'nin sunduğu nRF52840 + LoRa kombinasyonu sayesinde hayal gücünüz kadar geniş bir proje yelpazesi elinizin altında. Meshtastic dışında da düşünün.</p>
+      <h2 class="reveal">Not Just Communication. A Development Platform.</h2>
+      <p class="reveal">The nRF52840 + LoRa combination behind Meschy puts a project range as wide as your imagination at your fingertips. Think beyond Meshtastic.</p>
     </div>
   </section>
 
-  <!-- NE YAPILABİLİR? -->
+  <!-- WHAT CAN YOU BUILD? -->
   <section class="page">
-    <div class="container product-detail">
-      <div class="section-label reveal">Olasılıklar</div>
-      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">Meschy ile Neler Yapılabilir?</h3>
-      <p class="section-subtitle reveal">Tek bir kart, onlarca proje. İşte Meschy üzerinde gerçekleştirebileceğiniz bazı senaryolar:</p>
+    <div class="container project-detail">
+      <div class="section-label reveal">Possibilities</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">What Can You Build With Meschy?</h3>
+      <p class="section-subtitle reveal">One board, dozens of projects. Here are some scenarios you can build on Meschy:</p>
 
       <div class="usecase-grid stagger">
         <div class="usecase-item reveal">
           <span class="uc-icon">01</span>
-          <h4>Mesh Haberleşme</h4>
-          <p>Meshtastic ile altyapısız mesajlaşma. Afet, kamp, etkinlik senaryolarında.</p>
+          <h4>Mesh Communication</h4>
+          <p>Infrastructure-free messaging with Meshtastic. For disaster response, camping, and events.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">02</span>
           <h4>GPS Tracker</h4>
-          <p>Araç, evcil hayvan veya kargo takibi. LoRa menzili ile geniş alan kapsama.</p>
+          <p>Track a vehicle, a pet, or cargo. Wide-area coverage thanks to LoRa's range.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">03</span>
-          <h4>IoT Sensör Ağı</h4>
-          <p>Sıcaklık, nem, hava kalitesi — uzak noktalardaki verileri merkeze iletin.</p>
+          <h4>IoT Sensor Network</h4>
+          <p>Temperature, humidity, air quality — relay data from remote points back to a hub.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">04</span>
-          <h4>Tarım Otomasyonu</h4>
-          <p>Toprak nemi, sulama kontrolü. Tarlada GSM yoksa bile çalışır.</p>
+          <h4>Agricultural Automation</h4>
+          <p>Soil moisture and irrigation control. Works in the field even without cellular coverage.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">05</span>
-          <h4>Dağ & Doğa</h4>
-          <p>Şebeke dışı alanlarda grup iletişimi. Trekking, arama-kurtarma.</p>
+          <h4>Mountains & Nature</h4>
+          <p>Group communication off the grid. Trekking, search and rescue.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">06</span>
-          <h4>Prototipleme</h4>
-          <p>nRF52840 + LoRa ile kendi projenizi geliştirin. GPIO, BLE, USB-C hazır.</p>
+          <h4>Prototyping</h4>
+          <p>Build your own project with nRF52840 + LoRa. GPIO, BLE, and USB-C ready to go.</p>
         </div>
       </div>
     </div>
@@ -159,17 +146,17 @@
   <!-- BEJ BANNER -->
   <section class="banner-bej">
     <div class="container">
-      <h2 class="reveal">Meshtastic Komünitesine Katkı</h2>
-      <p class="reveal">Meschy, Meshtastic ekosistemiyle tam uyumludur. Dünya genelindeki Meshtastic kullanıcılarıyla doğrudan haberleşir. Schematrix olarak bu projeyi Türkiye'den küresel topluluğa bir katkı olarak geliştirdik.</p>
+      <h2 class="reveal">A Contribution to the Meshtastic Community</h2>
+      <p class="reveal">Meschy is fully compatible with the Meshtastic ecosystem and communicates directly with Meshtastic users worldwide. We built this project as Schematrix's contribution from Turkey to the global community.</p>
     </div>
   </section>
 
-  <!-- VİDEOLAR -->
+  <!-- VIDEOS -->
   <section class="page">
-    <div class="container product-detail">
-      <div class="section-label reveal">Keşfet</div>
-      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">Meschy'ye Yakından Bakın</h3>
-      <p class="section-subtitle reveal">Cihazın özelliklerini ve kullanım senaryolarını keşfedin.</p>
+    <div class="container project-detail">
+      <div class="section-label reveal">Explore</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">A Closer Look at Meschy</h3>
+      <p class="section-subtitle reveal">Explore the device's features and use cases.</p>
 
       <!-- Video 1 -->
       <div class="video-text-row reveal">
@@ -179,18 +166,18 @@
           </video>
         </div>
         <div class="vtr-text">
-          <h3>Altyapısız İletişim</h3>
-          <p>GSM veya internet bağlantısı olmayan ortamlarda cihazdan cihaza doğrudan mesajlaşma yapar. Meschy, LoRa fiziksel katmanında düşük bant genişliğinde ama yüksek dayanıklılıkta veri iletir; her düğüm aynı anda hem alıcı hem aktarıcı olarak çalışır.</p>
-          <p>Mesajlar ağda tek bir merkeze gitmez; komşu düğümler üzerinden çok atlamalı (multi-hop) şekilde taşınır. Bu yapı kapsama alanını zincirleme büyütür, tek nokta arızasına bağımlılığı azaltır ve afet/saha senaryolarında iletişimin devam etmesini sağlar.</p>
-          <p>Depremde baz istasyonları çöktüğünde veya dağda telefon çekmediğinde, Meschy ağındaki cihazlar yerel bir iletişim omurgası oluşturarak temel mesaj trafiğini ayakta tutar.</p>
+          <h3>Infrastructure-Free Communication</h3>
+          <p>Enables direct device-to-device messaging in environments with no GSM or internet connection. Meschy transmits data at low bandwidth but high durability over the LoRa physical layer; every node acts as both a receiver and a relay at the same time.</p>
+          <p>Messages don't travel to a single central point; they're carried through neighboring nodes in a multi-hop fashion. This structure extends coverage in a chain, reduces dependence on any single point of failure, and keeps communication running in disaster and field scenarios.</p>
+          <p>When cell towers go down in an earthquake, or there's no signal on a mountain, Meschy devices form a local communication backbone that keeps essential message traffic alive.</p>
           <div>
-            <span class="tag">Afet Hazırlık</span>
-            <span class="tag">Saha İletişimi</span>
+            <span class="tag">Disaster Readiness</span>
+            <span class="tag">Field Communication</span>
           </div>
         </div>
       </div>
 
-      <!-- Video 2 (ters) -->
+      <!-- Video 2 (reversed) -->
       <div class="video-text-row reverse reveal">
         <div class="vtr-video">
           <video autoplay muted loop playsinline preload="auto" controlslist="nodownload noplaybackrate nofullscreen" disablepictureinpicture>
@@ -198,10 +185,10 @@
           </video>
         </div>
         <div class="vtr-text">
-          <h3>Geliştirme Kartı Olarak Meschy</h3>
-          <p>Meshtastic dışında da düşünün: Meschy'nin nRF52840 işlemcisi, LoRa radyosu ve GPIO pinleri sayesinde kendi IoT projenizi sıfırdan geliştirebilirsiniz. nRF52840 tarafı uygulama mantığını, sensör okuma ve görev zamanlamasını yönetirken; LoRa katmanı uzun menzilde veri taşımayı üstlenir.</p>
-          <p>BLE üzerinden mobil uygulama konfigürasyonu, USB-C üzerinden debug/firmware güncelleme ve GPIO hattı üzerinden harici modül bağlantısı aynı platformda birleşir. Bu sayede tek kartla prototipten saha testine kadar hızlı bir geliştirme döngüsü kurabilirsiniz.</p>
-          <p>Sensör ağı, GPS takip, uzaktan izleme veya tamamen yeni bir fikir: yazılım katmanını değiştirerek aynı donanımı farklı ürün senaryolarına uyarlamak mümkündür.</p>
+          <h3>Meschy as a Development Board</h3>
+          <p>Think beyond Meshtastic: with Meschy's nRF52840 processor, LoRa radio, and GPIO pins, you can build your own IoT project from scratch. The nRF52840 side handles application logic, sensor reading, and task scheduling, while the LoRa layer takes care of long-range data transport.</p>
+          <p>Mobile app configuration over BLE, debugging and firmware updates over USB-C, and external module connections over GPIO all come together on the same platform. That means you can run a fast development cycle — from prototype to field test — on a single board.</p>
+          <p>Sensor network, GPS tracking, remote monitoring, or a completely new idea: it's possible to adapt the same hardware to different product scenarios just by changing the software layer.</p>
           <div>
             <span class="tag">nRF52840</span>
             <span class="tag">LoRa</span>
@@ -218,14 +205,14 @@
           </video>
         </div>
         <div class="vtr-text">
-          <h3>Dayanıklı, Bağımsız, Özgür</h3>
-          <p>Saha kullanımına uygun tasarım, düşük güç tüketimi ve kararlı bağlantı davranışı Meschy'nin temel karakteri. Cihaz, görev yoğunluğuna göre enerji tüketimini dengeleyerek uzun süreli kullanımda pil ömrünü korumaya odaklanır.</p>
-          <p>Ağ tarafında paket tekrarları, yönlendirme davranışı ve gönderim aralığı gibi parametreler uygulama ihtiyacına göre optimize edilebilir. Bu sayede aynı cihaz; düşük gecikme isteyen senaryolarla ultra düşük güç isteyen senaryolar arasında farklı profillerle çalıştırılabilir.</p>
-          <p>Açık kaynak yaklaşımı sayesinde firmware katmanını düzenleyebilir, telemetri formatını değiştirebilir ve cihazı kendi altyapınıza entegre edebilirsiniz. Bağımsız iletişimin bireysel bir hak olduğu fikri, Meschy'nin teknik mimarisine doğrudan yansır.</p>
+          <h3>Durable, Independent, Free</h3>
+          <p>Field-ready design, low power consumption, and stable connection behavior are core to Meschy's character. The device balances its energy use against task load to preserve battery life over long-term use.</p>
+          <p>On the network side, parameters like packet retries, routing behavior, and transmission interval can be tuned to the application's needs. This lets the same device run different profiles — from low-latency scenarios to ultra-low-power ones.</p>
+          <p>Because it's open source, you can edit the firmware layer, change the telemetry format, and integrate the device into your own infrastructure. The idea that independent communication is an individual right is reflected directly in Meschy's technical architecture.</p>
           <div>
-            <span class="tag">Açık Kaynak</span>
-            <span class="tag">Dayanıklı</span>
-            <span class="tag">Bağımsız</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Durable</span>
+            <span class="tag">Independent</span>
           </div>
         </div>
       </div>
@@ -235,7 +222,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <p>© 2026 Schematrix — Bağımsız Teknoloji Üretimi</p>
+        <p>© 2026 Schematrix — Independent Technology Studio</p>
         <div class="footer-social">
           <a href="https://instagram.com/schematrix.io" target="_blank">Instagram</a>
           <span>·</span>

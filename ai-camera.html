@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schematrix | AI Home Security Camera</title>
+  <meta name="description" content="An open-source Raspberry Pi 5 + Sony IMX500 home security system with on-device face recognition, local AI scene analysis, and full Telegram control." />
+  <meta name="theme-color" content="#F2F0EB" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="nav-top">
+        <a href="./index.html" class="logo">Schematrix</a>
+        <nav>
+          <a href="./index.html">Home</a>
+          <a href="./projects.html" class="active">Projects</a>
+          <a href="./manifesto.html">Manifesto</a>
+          <a href="./about.html">About</a>
+          <div class="nav-separator"></div>
+          <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
+          <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
+        </nav>
+        <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="color-strip"></div>
+
+  <!-- PROJECT DETAIL -->
+  <section class="page">
+    <div class="container project-detail">
+
+      <div class="section-label fade-up">Computer Vision</div>
+      <h2 class="section-title fade-up">AI Home Security Camera</h2>
+      <p class="section-subtitle fade-up">A Raspberry Pi 5 + Sony IMX500 security system with on-device face recognition, local AI scene descriptions, and full control from Telegram — no cloud AI, no subscription.</p>
+
+      <div class="project-detail-grid">
+        <div class="project-gallery reveal">
+          <img src="https://placehold.co/800x800/1E2A5E/FFFFFF?text=IMX500+Camera" alt="AI Home Security camera photo 1" />
+          <img src="https://placehold.co/800x800/151F45/FFFFFF?text=Face+Recognition" alt="AI Home Security camera photo 2" />
+          <img src="https://placehold.co/800x800/2D3E80/FFFFFF?text=Pose+Mode" alt="AI Home Security camera photo 3" />
+          <img src="https://placehold.co/800x800/EBE8E2/1A1A1A?text=Telegram+Bot" alt="AI Home Security camera photo 4" />
+        </div>
+
+        <aside class="project-summary reveal">
+          <h3>AI Home Security</h3>
+          <p>Built on a Raspberry Pi 5 with the Sony IMX500 AI camera, this system detects people on-sensor, recognizes known faces with YuNet + SFace, and — when asked — describes what's happening in the frame using a local vision model (llava-phi3 via Ollama). No frame ever leaves the device for AI processing.</p>
+          <p>Everything is controlled from Telegram: enroll faces, trigger the siren, start a password-protected live stream, or switch to skeleton pose-estimation mode. 30+ commands, fully documented on GitHub.</p>
+          <div class="project-status">Open Source Project</div>
+          <div class="project-links">
+            <a href="https://github.com/schematrix/Raspberry-IMX500-AI-Home-Security" class="btn btn-primary" target="_blank" style="width:100%;">View on GitHub</a>
+            <a href="https://www.youtube.com/watch?v=VnHvQj5N-yw&t=134s" class="btn btn-accent" target="_blank" style="width:100%;">Watch on YouTube</a>
+            <a href="./projects.html" class="btn btn-secondary" style="width:100%;">Back to Projects</a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- TECH SPECS -->
+      <div class="reveal" style="margin-top: 24px;">
+        <div class="section-label">Technical</div>
+        <h3 style="font-family:'Clash Display',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:8px;">Hardware & Software</h3>
+        <p style="font-size:15px; color:var(--text-sub); line-height:1.7; max-width:580px; margin-bottom:8px;">The system runs on a Raspberry Pi 5 paired with the Raspberry Pi AI Camera — a Sony IMX500 sensor with its own on-chip neural network accelerator. Person detection and pose estimation happen directly on the sensor; face recognition and scene analysis run on the Pi's CPU, entirely offline.</p>
+
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-label">Board</div>
+            <div class="spec-value">Raspberry Pi 5 (8GB)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Camera</div>
+            <div class="spec-value">Sony IMX500 AI Camera</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Person Detection</div>
+            <div class="spec-value">On-Sensor NN (SSD MobileNetV2)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Face Recognition</div>
+            <div class="spec-value">YuNet + SFace</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Scene AI</div>
+            <div class="spec-value">llava-phi3 via Ollama (local)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Pose Estimation</div>
+            <div class="spec-value">HigherHRNet, 17 keypoints</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Control</div>
+            <div class="spec-value">Telegram Bot (30+ commands)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Live Stream</div>
+            <div class="spec-value">MJPEG over ngrok, password-protected</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Alerts</div>
+            <div class="spec-value">GPIO buzzer + Telegram burst photos</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Built by</div>
+            <div class="spec-value">Schematrix</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRIVACY BANNER -->
+  <section class="banner-navy">
+    <div class="container">
+      <h2 class="reveal">The AI Runs on the Device. Not in Someone Else's Cloud.</h2>
+      <p class="reveal">Face recognition and scene analysis both run locally on the Raspberry Pi — no API key, no per-request cost, no footage sent to a third party. Telegram is only used for control and alerts, and live streaming is opt-in and password-protected.</p>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="page">
+    <div class="container project-detail">
+      <div class="section-label reveal">Possibilities</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">What It Actually Does</h3>
+      <p class="section-subtitle reveal">One camera, two modes, all controlled from a phone:</p>
+
+      <div class="usecase-grid stagger">
+        <div class="usecase-item reveal">
+          <span class="uc-icon">01</span>
+          <h4>Face Recognition</h4>
+          <p>Guided 3-angle enrollment, then silent logging for known faces and instant alerts for strangers.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">02</span>
+          <h4>AI Scene Description</h4>
+          <p>Send /scene and a local vision model describes what's happening, using the recognized person's name.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">03</span>
+          <h4>Stranger Alerts</h4>
+          <p>Burst photos to Telegram and an optional GPIO siren when an unrecognized face is confirmed.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">04</span>
+          <h4>Pose / Skeleton Mode</h4>
+          <p>Switch to IMX500 HigherHRNet pose estimation — 17-keypoint skeletons and basic action classification.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">05</span>
+          <h4>Live Streaming</h4>
+          <p>Password-protected MJPEG stream over ngrok, viewable from any browser, anywhere.</p>
+        </div>
+        <div class="usecase-item reveal">
+          <span class="uc-icon">06</span>
+          <h4>Quiet Hours</h4>
+          <p>Scheduled or manual quiet hours mute the siren while Telegram alerts keep coming through.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="page">
+    <div class="container project-detail">
+      <div class="section-label reveal">Watch</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">See It Running</h3>
+      <p class="section-subtitle reveal">A walkthrough of the system in action — face recognition, alerts, and live scene analysis.</p>
+
+      <div class="video-embed reveal">
+        <iframe src="https://www.youtube.com/embed/VnHvQj5N-yw?start=134" title="AI Home Security Camera demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 Schematrix — Independent Technology Studio</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/schematrix.io" target="_blank">Instagram</a>
+          <span>·</span>
+          <a href="mailto:theindustriesofengineering@gmail.com">theindustriesofengineering@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

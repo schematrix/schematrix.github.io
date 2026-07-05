@@ -1,72 +1,65 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schematrix | Ana Sayfa</title>
-  <meta name="description" content="Schematrix - Farklı düşünenler için farklı teknoloji." />
+  <title>Schematrix | Home</title>
+  <meta name="description" content="Schematrix - Different technology for different thinkers." />
   <meta name="theme-color" content="#1E2A5E" />
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body class="sidebar-collapsed">
-
-  <div class="top-bar">
-    <div class="top-bar-inner">
-      <a href="./index.html"><span class="top-bar-logo">Schematrix</span></a>
-      <span class="top-bar-tagline">Farklı düşünenler için farklı teknoloji</span>
-    </div>
-  </div>
-
-  <button id="menuToggle" class="menu-toggle" type="button" aria-label="Menüyü aç veya kapat" aria-expanded="false">Menüyü Aç</button>
+<body>
 
   <header>
     <div class="header-content">
       <div class="nav-top">
-        <div class="mobile-bar">
-          <a href="./index.html" class="logo">Schematrix</a>
-          <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menü">Menü</button>
-        </div>
-        <a href="./index.html" class="logo" id="desktopLogo">Schematrix</a>
+        <a href="./index.html" class="logo">Schematrix</a>
         <nav>
-          <a href="./index.html" class="active">Ana Sayfa</a>
-          <a href="./products.html">Ürünler</a>
+          <a href="./index.html" class="active">Home</a>
+          <a href="./projects.html">Projects</a>
           <a href="./manifesto.html">Manifesto</a>
-          <a href="./about.html">Hakkımda</a>
+          <a href="./about.html">About</a>
           <div class="nav-separator"></div>
           <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
           <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
         </nav>
+        <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">Menu</button>
       </div>
     </div>
   </header>
 
-  <section class="hero hero-video-section">
-    <div class="hero-video-wrap">
-      <video class="hero-video lazy-video" autoplay muted loop playsinline preload="metadata">
-        <source src="./videos/optimized/anasayfa.mp4?v=20260220-1" type="video/mp4" />
-      </video>
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1 class="reveal">Different technology <span class="hero-gradient">for different thinkers.</span></h1>
+      <div class="hero-body reveal">
+        <p>Schematrix is an independent technology studio — one person designing, building, and shipping hardware and software projects end to end, without the usual sales layer in between.</p>
+      </div>
+      <div class="hero-cta reveal">
+        <a href="./projects.html" class="btn btn-primary">View Projects</a>
+        <a href="./manifesto.html" class="btn btn-secondary">Read the Manifesto</a>
+      </div>
     </div>
   </section>
 
-  <section class="page" style="padding-top:48px;padding-bottom:48px;">
+  <section class="page" style="padding-top:64px;padding-bottom:48px;">
     <div class="container">
       <div class="features-row stagger">
-        <a class="product-link-card reveal" href="./products.html">
+        <a class="link-card reveal" href="./projects.html">
           <div class="feature-block">
-            <h4>Ürünler</h4>
-            <p>Geliştirdiğimiz ürünleri inceleyin.</p>
+            <h4>Projects</h4>
+            <p>Explore the independent projects we build.</p>
           </div>
         </a>
-        <a class="product-link-card reveal" href="./manifesto.html">
+        <a class="link-card reveal" href="./manifesto.html">
           <div class="feature-block">
             <h4>Manifesto</h4>
-            <p>Nasıl düşündüğümüzü ve nasıl ürettiğimizi okuyun.</p>
+            <p>Read how we think and how we build.</p>
           </div>
         </a>
-        <a class="product-link-card reveal" href="./about.html">
+        <a class="link-card reveal" href="./about.html">
           <div class="feature-block">
-            <h4>Hakkımda</h4>
-            <p>Kim olduğumu, ne yaptığımı ve bu yolculuğu neden kurduğumu okuyun.</p>
+            <h4>About</h4>
+            <p>Read who I am, what I do, and why I started this journey.</p>
           </div>
         </a>
       </div>
@@ -75,21 +68,19 @@
 
   <section class="page" style="padding-top:0;padding-bottom:56px;">
     <div class="container">
-      <div class="section-label reveal">Satın Al</div>
-      <h2 class="section-title reveal">Hızlı Satın Al</h2>
-      <p class="section-subtitle reveal">Müşteriler için doğrudan ürün satın alma bağlantıları.</p>
-      <div class="features-row stagger">
+      <div class="section-label reveal">Featured</div>
+      <h2 class="section-title reveal">Latest Projects</h2>
+      <p class="section-subtitle reveal">A look at what we're building right now.</p>
+      <div class="features-row stagger" style="grid-template-columns:repeat(auto-fit,minmax(280px,420px));">
         <div class="feature-block reveal" style="text-align:left;">
           <h4>Meschy Mesh Device</h4>
-          <p>Merkeziyetsiz haberleşme için geliştirilen açık kaynak platform.</p>
-          <p><strong>Fiyat: Daha belirlenmedi</strong></p>
-          <a href="./meschy.html" class="btn btn-accent">Ürünü İncele</a>
+          <p>An open-source platform for decentralized, off-grid communication.</p>
+          <a href="./meschy.html" class="btn btn-accent">View Project</a>
         </div>
         <div class="feature-block reveal" style="text-align:left;">
-          <h4>İkinci Ürün</h4>
-          <p>Yeni ürün için satış/ön sipariş bağlantısı.</p>
-          <p><strong>Fiyat: Yakında</strong></p>
-          <a href="./ikinci-urun.html" class="btn btn-accent">Ürünü İncele</a>
+          <h4>AI Home Security Camera</h4>
+          <p>Raspberry Pi 5 + Sony IMX500 with on-device face recognition and local AI scene analysis.</p>
+          <a href="./ai-camera.html" class="btn btn-accent">View Project</a>
         </div>
       </div>
     </div>
@@ -98,7 +89,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <p>© 2026 Schematrix - Bağımsız Teknoloji Üretimi</p>
+        <p>© 2026 Schematrix — Independent Technology Studio</p>
         <div class="footer-social">
           <a href="https://instagram.com/schematrix.io" target="_blank">Instagram</a>
           <span>·</span>
