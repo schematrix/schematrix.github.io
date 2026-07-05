@@ -428,6 +428,22 @@ nav a.active {
   transition: all var(--ease);
 }
 
+.project-gallery-single {
+  grid-template-columns: 1fr;
+}
+
+.project-gallery-single img,
+.project-gallery-single video {
+  width: 100%;
+  border-radius: var(--r);
+  border: 1px solid var(--border-bej);
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: var(--bej-light);
+  max-height: 560px;
+  display: block;
+}
+
 .project-gallery img:hover {
   border-color: var(--bej-dark);
   box-shadow: 0 4px 16px rgba(30,42,94,.05);
