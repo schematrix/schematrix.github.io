@@ -18,7 +18,6 @@
           <a href="./index.html" class="active">Home</a>
           <a href="./projects.html">Projects</a>
           <a href="./manifesto.html">Manifesto</a>
-          <a href="./about.html">About</a>
           <div class="nav-separator"></div>
           <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
           <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
@@ -43,7 +42,7 @@
 
   <section class="page" style="padding-top:64px;padding-bottom:48px;">
     <div class="container">
-      <div class="features-row stagger">
+      <div class="features-row stagger" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
         <a class="link-card reveal" href="./projects.html">
           <div class="feature-block">
             <h4>Projects</h4>
@@ -56,12 +55,6 @@
             <p>Read how we think and how we build.</p>
           </div>
         </a>
-        <a class="link-card reveal" href="./about.html">
-          <div class="feature-block">
-            <h4>About</h4>
-            <p>Read who I am, what I do, and why I started this journey.</p>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -71,17 +64,37 @@
       <div class="section-label reveal">Featured</div>
       <h2 class="section-title reveal">Latest Projects</h2>
       <p class="section-subtitle reveal">A look at what we're building right now.</p>
-      <div class="features-row stagger" style="grid-template-columns:repeat(auto-fit,minmax(280px,420px));">
-        <div class="feature-block reveal" style="text-align:left;">
-          <h4>Meschy Mesh Device</h4>
-          <p>An open-source platform for decentralized, off-grid communication.</p>
-          <a href="./meschy.html" class="btn btn-accent">View Project</a>
-        </div>
-        <div class="feature-block reveal" style="text-align:left;">
-          <h4>AI Home Security Camera</h4>
-          <p>Raspberry Pi 5 + Sony IMX500 with on-device face recognition and local AI scene analysis.</p>
-          <a href="./ai-camera.html" class="btn btn-accent">View Project</a>
-        </div>
+
+      <div class="project-grid stagger">
+        <a class="link-card reveal" href="./meschy.html">
+          <div class="project-card">
+            <div class="project-image">
+              <span class="project-badge">Open Source</span>
+              <video autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+                <source src="./images/meschy_product.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="project-content">
+              <h3>Meschy Mesh Device</h3>
+              <p>An open-source platform for decentralized, off-grid communication.</p>
+              <span class="btn btn-primary">View Project</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="link-card reveal" href="./ai-camera.html">
+          <div class="project-card">
+            <div class="project-image">
+              <span class="project-badge">Open Source</span>
+              <div class="placeholder-text">AI Home Security Photo</div>
+            </div>
+            <div class="project-content">
+              <h3>AI Home Security Camera</h3>
+              <p>Raspberry Pi 5 + Sony IMX500 with on-device face recognition and local AI scene analysis.</p>
+              <span class="btn btn-primary">View Project</span>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
