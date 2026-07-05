@@ -355,6 +355,11 @@ nav a.active {
   font-weight: 600; z-index: 1; letter-spacing: .5px;
 }
 
+.project-image video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
 .project-card:nth-child(2) .placeholder-text { color: var(--text-muted); }
 
 .project-badge {
