@@ -430,12 +430,14 @@ nav a.active {
 
 .project-gallery-single {
   grid-template-columns: 1fr;
+  max-width: 320px;
+  align-self: start;
 }
 
 .project-gallery-single img,
 .project-gallery-single video {
   width: 100%;
-  height: 420px;
+  height: 280px;
   border-radius: var(--r);
   border: 1px solid var(--border-bej);
   object-fit: contain;
@@ -444,9 +446,12 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
+  .project-gallery-single {
+    max-width: 220px;
+  }
   .project-gallery-single img,
   .project-gallery-single video {
-    height: 280px;
+    height: 200px;
   }
 }
 
