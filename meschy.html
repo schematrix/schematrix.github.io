@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schematrix | Meschy — Development Platform</title>
-  <meta name="description" content="Meschy — an open-source LoRa and nRF52840-based development platform. Meshtastic-compatible." />
+  <title data-i18n="meschy_title">Schematrix | Meschy — Development Platform</title>
+  <meta name="description" content="Meschy — an open-source LoRa and nRF52840-based development platform. Meshtastic-compatible." data-i18n-content="meschy_meta" />
   <meta name="theme-color" content="#F2F0EB" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -15,12 +15,17 @@
       <div class="nav-top">
         <a href="./index.html" class="logo">Schematrix</a>
         <nav>
-          <a href="./index.html">Home</a>
-          <a href="./projects.html" class="active">Projects</a>
-          <a href="./manifesto.html">Manifesto</a>
+          <a href="./index.html" data-i18n="nav_home">Home</a>
+          <a href="./projects.html" class="active" data-i18n="nav_projects">Projects</a>
+          <a href="./manifesto.html" data-i18n="nav_manifesto">Manifesto</a>
           <div class="nav-separator"></div>
           <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
           <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
+          <div class="nav-separator"></div>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-set-lang="en" aria-label="English">EN</button>
+            <button type="button" data-set-lang="tr" aria-label="Türkçe">TR</button>
+          </div>
         </nav>
         <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">Menu</button>
       </div>
@@ -33,9 +38,9 @@
   <section class="page">
     <div class="container project-detail">
 
-      <div class="section-label fade-up">Development Platform</div>
-      <h2 class="section-title fade-up">Meschy Mesh Device</h2>
-      <p class="section-subtitle fade-up">Not just a communication device — an open-source development platform for endless projects.</p>
+      <div class="section-label fade-up" data-i18n="meschy_label">Development Platform</div>
+      <h2 class="section-title fade-up" data-i18n="meschy_heading">Meschy Mesh Device</h2>
+      <p class="section-subtitle fade-up" data-i18n="meschy_sub">Not just a communication device — an open-source development platform for endless projects.</p>
 
       <div class="project-detail-grid">
         <div class="project-gallery project-gallery-single reveal">
@@ -46,46 +51,46 @@
 
         <aside class="project-summary reveal">
           <h3>Meschy</h3>
-          <p>Meschy is a LoRa + nRF52840-based development board built by Schematrix. It's fully compatible with Meshtastic, though it needs the firmware setup described on the Meshtastic site to join the network.</p>
-          <p>It's not just a ready-made communication device — it's a flexible development platform for Meshtastic-based projects, IoT prototypes, and field communication scenarios. You'll find the full setup details further down this page.</p>
-          <div class="project-status">Open Source Project</div>
+          <p data-i18n="meschy_sum_p1">Meschy is a LoRa + nRF52840-based development board built by Schematrix. It's fully compatible with Meshtastic, though it needs the firmware setup described on the Meshtastic site to join the network.</p>
+          <p data-i18n="meschy_sum_p2">It's not just a ready-made communication device — it's a flexible development platform for Meshtastic-based projects, IoT prototypes, and field communication scenarios. You'll find the full setup details further down this page.</p>
+          <div class="project-status" data-i18n="status_open_source">Open Source Project</div>
           <div class="project-links">
-            <a href="https://github.com/schematrix/meschy" class="btn btn-primary" target="_blank" style="width:100%;">View on GitHub</a>
-            <a href="https://instagram.com/meschy.tech" class="btn btn-accent" target="_blank" style="width:100%;">@meschy.tech on Instagram</a>
-            <a href="./projects.html" class="btn btn-secondary" style="width:100%;">Back to Projects</a>
+            <a href="https://github.com/schematrix/meschy" class="btn btn-primary" target="_blank" style="width:100%;" data-i18n="btn_view_github">View on GitHub</a>
+            <a href="https://instagram.com/meschy.tech" class="btn btn-accent" target="_blank" style="width:100%;" data-i18n="btn_meschy_insta">@meschy.tech on Instagram</a>
+            <a href="./projects.html" class="btn btn-secondary" style="width:100%;" data-i18n="btn_back_projects">Back to Projects</a>
           </div>
         </aside>
       </div>
 
       <!-- TECH SPECS -->
       <div class="reveal" style="margin-top: 24px;">
-        <div class="section-label">Technical</div>
-        <h3 style="font-family:'Clash Display',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:8px;">Hardware Specifications</h3>
-        <p style="font-size:15px; color:var(--text-sub); line-height:1.7; max-width:580px; margin-bottom:8px;">Meschy is a development board built around the Nordic nRF52840 processor and a Semtech LoRa radio module. Running the Meshtastic open-source firmware, it's fully compatible with the global Meshtastic community. Bluetooth 5.0, USB-C, and GPIO pins make it easy to extend with external sensors and modules.</p>
+        <div class="section-label" data-i18n="tech_label">Technical</div>
+        <h3 style="font-family:'Clash Display',sans-serif; font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:8px;" data-i18n="meschy_tech_heading">Hardware Specifications</h3>
+        <p style="font-size:15px; color:var(--text-sub); line-height:1.7; max-width:580px; margin-bottom:8px;" data-i18n="meschy_tech_body">Meschy is a development board built around the Nordic nRF52840 processor and a Semtech LoRa radio module. Running the Meshtastic open-source firmware, it's fully compatible with the global Meshtastic community. Bluetooth 5.0, USB-C, and GPIO pins make it easy to extend with external sensors and modules.</p>
 
         <div class="spec-grid">
           <div class="spec-item">
-            <div class="spec-label">Processor</div>
+            <div class="spec-label" data-i18n="spec_processor">Processor</div>
             <div class="spec-value">nRF52840</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Radio</div>
+            <div class="spec-label" data-i18n="spec_radio">Radio</div>
             <div class="spec-value">LoRa SX1262</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Firmware</div>
+            <div class="spec-label" data-i18n="spec_firmware">Firmware</div>
             <div class="spec-value">Meshtastic</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Topology</div>
-            <div class="spec-value">Mesh Network</div>
+            <div class="spec-label" data-i18n="spec_topology">Topology</div>
+            <div class="spec-value" data-i18n="spec_topology_v">Mesh Network</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Connectivity</div>
+            <div class="spec-label" data-i18n="spec_connectivity">Connectivity</div>
             <div class="spec-value">BLE 5.0 + USB-C</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Built by</div>
+            <div class="spec-label" data-i18n="spec_built_by">Built by</div>
             <div class="spec-value">Schematrix</div>
           </div>
         </div>
@@ -97,48 +102,48 @@
   <!-- DEVELOPMENT PLATFORM BANNER -->
   <section class="banner-navy">
     <div class="container">
-      <h2 class="reveal">Not Just Communication. A Development Platform.</h2>
-      <p class="reveal">The nRF52840 + LoRa combination behind Meschy puts a project range as wide as your imagination at your fingertips. Think beyond Meshtastic.</p>
+      <h2 class="reveal" data-i18n="meschy_banner1_h">Not Just Communication. A Development Platform.</h2>
+      <p class="reveal" data-i18n="meschy_banner1_p">The nRF52840 + LoRa combination behind Meschy puts a project range as wide as your imagination at your fingertips. Think beyond Meshtastic.</p>
     </div>
   </section>
 
   <!-- WHAT CAN YOU BUILD? -->
   <section class="page">
     <div class="container project-detail">
-      <div class="section-label reveal">Possibilities</div>
-      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">What Can You Build With Meschy?</h3>
-      <p class="section-subtitle reveal">One board, dozens of projects. Here are some scenarios you can build on Meschy:</p>
+      <div class="section-label reveal" data-i18n="poss_label">Possibilities</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);" data-i18n="meschy_uc_heading">What Can You Build With Meschy?</h3>
+      <p class="section-subtitle reveal" data-i18n="meschy_uc_sub">One board, dozens of projects. Here are some scenarios you can build on Meschy:</p>
 
       <div class="usecase-grid stagger">
         <div class="usecase-item reveal">
           <span class="uc-icon">01</span>
-          <h4>Mesh Communication</h4>
-          <p>Infrastructure-free messaging with Meshtastic. For disaster response, camping, and events.</p>
+          <h4 data-i18n="meschy_uc1_h">Mesh Communication</h4>
+          <p data-i18n="meschy_uc1_p">Infrastructure-free messaging with Meshtastic. For disaster response, camping, and events.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">02</span>
-          <h4>GPS Tracker</h4>
-          <p>Track a vehicle, a pet, or cargo. Wide-area coverage thanks to LoRa's range.</p>
+          <h4 data-i18n="meschy_uc2_h">GPS Tracker</h4>
+          <p data-i18n="meschy_uc2_p">Track a vehicle, a pet, or cargo. Wide-area coverage thanks to LoRa's range.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">03</span>
-          <h4>IoT Sensor Network</h4>
-          <p>Temperature, humidity, air quality — relay data from remote points back to a hub.</p>
+          <h4 data-i18n="meschy_uc3_h">IoT Sensor Network</h4>
+          <p data-i18n="meschy_uc3_p">Temperature, humidity, air quality — relay data from remote points back to a hub.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">04</span>
-          <h4>Agricultural Automation</h4>
-          <p>Soil moisture and irrigation control. Works in the field even without cellular coverage.</p>
+          <h4 data-i18n="meschy_uc4_h">Agricultural Automation</h4>
+          <p data-i18n="meschy_uc4_p">Soil moisture and irrigation control. Works in the field even without cellular coverage.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">05</span>
-          <h4>Mountains & Nature</h4>
-          <p>Group communication off the grid. Trekking, search and rescue.</p>
+          <h4 data-i18n="meschy_uc5_h">Mountains & Nature</h4>
+          <p data-i18n="meschy_uc5_p">Group communication off the grid. Trekking, search and rescue.</p>
         </div>
         <div class="usecase-item reveal">
           <span class="uc-icon">06</span>
-          <h4>Prototyping</h4>
-          <p>Build your own project with nRF52840 + LoRa. GPIO, BLE, and USB-C ready to go.</p>
+          <h4 data-i18n="meschy_uc6_h">Prototyping</h4>
+          <p data-i18n="meschy_uc6_p">Build your own project with nRF52840 + LoRa. GPIO, BLE, and USB-C ready to go.</p>
         </div>
       </div>
     </div>
@@ -147,17 +152,17 @@
   <!-- BEJ BANNER -->
   <section class="banner-bej">
     <div class="container">
-      <h2 class="reveal">A Contribution to the Meshtastic Community</h2>
-      <p class="reveal">Meschy is fully compatible with the Meshtastic ecosystem and communicates directly with Meshtastic users worldwide. We built this project as Schematrix's contribution from Turkey to the global community.</p>
+      <h2 class="reveal" data-i18n="meschy_banner2_h">A Contribution to the Meshtastic Community</h2>
+      <p class="reveal" data-i18n="meschy_banner2_p">Meschy is fully compatible with the Meshtastic ecosystem and communicates directly with Meshtastic users worldwide. We built this project as Schematrix's contribution from Turkey to the global community.</p>
     </div>
   </section>
 
   <!-- VIDEOS -->
   <section class="page">
     <div class="container project-detail">
-      <div class="section-label reveal">Explore</div>
-      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);">A Closer Look at Meschy</h3>
-      <p class="section-subtitle reveal">Explore the device's features and use cases.</p>
+      <div class="section-label reveal" data-i18n="explore_label">Explore</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);" data-i18n="meschy_videos_heading">A Closer Look at Meschy</h3>
+      <p class="section-subtitle reveal" data-i18n="meschy_videos_sub">Explore the device's features and use cases.</p>
 
       <!-- Video 1 -->
       <div class="video-text-row reveal">
@@ -167,13 +172,13 @@
           </video>
         </div>
         <div class="vtr-text">
-          <h3>Infrastructure-Free Communication</h3>
-          <p>Enables direct device-to-device messaging in environments with no GSM or internet connection. Meschy transmits data at low bandwidth but high durability over the LoRa physical layer; every node acts as both a receiver and a relay at the same time.</p>
-          <p>Messages don't travel to a single central point; they're carried through neighboring nodes in a multi-hop fashion. This structure extends coverage in a chain, reduces dependence on any single point of failure, and keeps communication running in disaster and field scenarios.</p>
-          <p>When cell towers go down in an earthquake, or there's no signal on a mountain, Meschy devices form a local communication backbone that keeps essential message traffic alive.</p>
+          <h3 data-i18n="meschy_vtr1_h">Infrastructure-Free Communication</h3>
+          <p data-i18n="meschy_vtr1_p1">Enables direct device-to-device messaging in environments with no GSM or internet connection. Meschy transmits data at low bandwidth but high durability over the LoRa physical layer; every node acts as both a receiver and a relay at the same time.</p>
+          <p data-i18n="meschy_vtr1_p2">Messages don't travel to a single central point; they're carried through neighboring nodes in a multi-hop fashion. This structure extends coverage in a chain, reduces dependence on any single point of failure, and keeps communication running in disaster and field scenarios.</p>
+          <p data-i18n="meschy_vtr1_p3">When cell towers go down in an earthquake, or there's no signal on a mountain, Meschy devices form a local communication backbone that keeps essential message traffic alive.</p>
           <div>
-            <span class="tag">Disaster Readiness</span>
-            <span class="tag">Field Communication</span>
+            <span class="tag" data-i18n="tag_disaster">Disaster Readiness</span>
+            <span class="tag" data-i18n="tag_field_comm">Field Communication</span>
           </div>
         </div>
       </div>
@@ -181,17 +186,17 @@
       <!-- Video 2 (reversed) -->
       <div class="video-text-row reverse reveal">
         <div class="vtr-video">
-          <img src="./videos/optimized/meschy_tanitim5.png?v=20260705-1" alt="Meschy development board" style="width:100%;display:block;" />
+          <img src="./videos/optimized/meschy_tanitim5.png?v=20260705-1" alt="Meschy development board" data-i18n-alt="meschy_vtr2_alt" style="width:100%;display:block;" />
         </div>
         <div class="vtr-text">
-          <h3>Meschy as a Development Board</h3>
-          <p>Think beyond Meshtastic: with Meschy's nRF52840 processor, LoRa radio, and GPIO pins, you can build your own IoT project from scratch. The nRF52840 side handles application logic, sensor reading, and task scheduling, while the LoRa layer takes care of long-range data transport.</p>
-          <p>Mobile app configuration over BLE, debugging and firmware updates over USB-C, and external module connections over GPIO all come together on the same platform. That means you can run a fast development cycle — from prototype to field test — on a single board.</p>
-          <p>Sensor network, GPS tracking, remote monitoring, or a completely new idea: it's possible to adapt the same hardware to different product scenarios just by changing the software layer.</p>
+          <h3 data-i18n="meschy_vtr2_h">Meschy as a Development Board</h3>
+          <p data-i18n="meschy_vtr2_p1">Think beyond Meshtastic: with Meschy's nRF52840 processor, LoRa radio, and GPIO pins, you can build your own IoT project from scratch. The nRF52840 side handles application logic, sensor reading, and task scheduling, while the LoRa layer takes care of long-range data transport.</p>
+          <p data-i18n="meschy_vtr2_p2">Mobile app configuration over BLE, debugging and firmware updates over USB-C, and external module connections over GPIO all come together on the same platform. That means you can run a fast development cycle — from prototype to field test — on a single board.</p>
+          <p data-i18n="meschy_vtr2_p3">Sensor network, GPS tracking, remote monitoring, or a completely new idea: it's possible to adapt the same hardware to different product scenarios just by changing the software layer.</p>
           <div>
             <span class="tag">nRF52840</span>
             <span class="tag">LoRa</span>
-            <span class="tag">Platform</span>
+            <span class="tag" data-i18n="tag_platform">Platform</span>
           </div>
         </div>
       </div>
@@ -204,14 +209,14 @@
           </video>
         </div>
         <div class="vtr-text">
-          <h3>Durable, Independent, Free</h3>
-          <p>Field-ready design, low power consumption, and stable connection behavior are core to Meschy's character. The device balances its energy use against task load to preserve battery life over long-term use.</p>
-          <p>On the network side, parameters like packet retries, routing behavior, and transmission interval can be tuned to the application's needs. This lets the same device run different profiles — from low-latency scenarios to ultra-low-power ones.</p>
-          <p>Because it's open source, you can edit the firmware layer, change the telemetry format, and integrate the device into your own infrastructure. The idea that independent communication is an individual right is reflected directly in Meschy's technical architecture.</p>
+          <h3 data-i18n="meschy_vtr3_h">Durable, Independent, Free</h3>
+          <p data-i18n="meschy_vtr3_p1">Field-ready design, low power consumption, and stable connection behavior are core to Meschy's character. The device balances its energy use against task load to preserve battery life over long-term use.</p>
+          <p data-i18n="meschy_vtr3_p2">On the network side, parameters like packet retries, routing behavior, and transmission interval can be tuned to the application's needs. This lets the same device run different profiles — from low-latency scenarios to ultra-low-power ones.</p>
+          <p data-i18n="meschy_vtr3_p3">Because it's open source, you can edit the firmware layer, change the telemetry format, and integrate the device into your own infrastructure. The idea that independent communication is an individual right is reflected directly in Meschy's technical architecture.</p>
           <div>
-            <span class="tag">Open Source</span>
-            <span class="tag">Durable</span>
-            <span class="tag">Independent</span>
+            <span class="tag" data-i18n="tag_open_source">Open Source</span>
+            <span class="tag" data-i18n="tag_durable">Durable</span>
+            <span class="tag" data-i18n="tag_independent">Independent</span>
           </div>
         </div>
       </div>
@@ -221,7 +226,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <p>© 2026 Schematrix — Independent Technology Studio</p>
+        <p data-i18n="footer_copy">© 2026 Schematrix — Independent Technology Studio</p>
         <div class="footer-social">
           <a href="https://instagram.com/schematrix.io" target="_blank">Instagram</a>
           <span>·</span>
@@ -231,6 +236,7 @@
     </div>
   </footer>
 
+  <script src="./i18n.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>

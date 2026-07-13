@@ -119,6 +119,32 @@ nav a.active {
 
 .menu-toggle { display: none; }
 
+/* ── Language Switch ─────────────────────── */
+
+.lang-switch {
+  display: flex; align-items: center; gap: 2px;
+  background: var(--bej-light);
+  border: 1px solid var(--border-bej);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.lang-switch button {
+  background: transparent; border: none; cursor: pointer;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700; font-size: 12px; letter-spacing: .5px;
+  color: var(--text-sub);
+  padding: 6px 11px; border-radius: 999px;
+  transition: all var(--ease);
+}
+
+.lang-switch button:hover { color: var(--navy); }
+
+.lang-switch button.active {
+  background: var(--navy);
+  color: var(--bej-light);
+}
+
 /* ── ACCENT STRIP — Navy + Bej ───────────── */
 
 .color-strip {
@@ -796,6 +822,8 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   nav.open { display: flex; }
   nav a { font-size: 15px; padding: 12px 14px; border-radius: var(--r-sm); }
   .nav-separator { width: auto; height: 1px; margin: 8px 4px; }
+  .lang-switch { align-self: flex-start; margin: 2px 4px; }
+  .lang-switch button { padding: 8px 18px; font-size: 13px; }
 
   .hero { padding: 56px 0 40px; }
   .hero h1 { font-size: 36px; letter-spacing: -1.5px; }

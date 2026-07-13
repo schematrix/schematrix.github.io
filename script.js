@@ -1,11 +1,14 @@
 (function () {
   /* ── Mobile Menu Toggle ────────────────── */
+  const t = (key, fallback) =>
+    (window.SchematrixI18N ? window.SchematrixI18N.t(key) : fallback);
+
   const mobileToggle = document.getElementById('mobileToggle');
   const nav = document.querySelector('nav');
   if (mobileToggle && nav) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
-      mobileToggle.textContent = isOpen ? 'Close' : 'Menu';
+      mobileToggle.textContent = isOpen ? t('nav_close', 'Close') : t('nav_menu', 'Menu');
       mobileToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
@@ -13,7 +16,7 @@
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
           nav.classList.remove('open');
-          mobileToggle.textContent = 'Menu';
+          mobileToggle.textContent = t('nav_menu', 'Menu');
           mobileToggle.setAttribute('aria-expanded', 'false');
         }
       });

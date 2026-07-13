@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schematrix | Manifesto</title>
-  <meta name="description" content="The Schematrix manifesto" />
+  <title data-i18n="man_title">Schematrix | Manifesto</title>
+  <meta name="description" content="The Schematrix manifesto" data-i18n-content="man_meta" />
   <meta name="theme-color" content="#1E2A5E" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -15,12 +15,17 @@
       <div class="nav-top">
         <a href="./index.html" class="logo">Schematrix</a>
         <nav>
-          <a href="./index.html">Home</a>
-          <a href="./projects.html">Projects</a>
-          <a href="./manifesto.html" class="active">Manifesto</a>
+          <a href="./index.html" data-i18n="nav_home">Home</a>
+          <a href="./projects.html" data-i18n="nav_projects">Projects</a>
+          <a href="./manifesto.html" class="active" data-i18n="nav_manifesto">Manifesto</a>
           <div class="nav-separator"></div>
           <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
           <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
+          <div class="nav-separator"></div>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-set-lang="en" aria-label="English">EN</button>
+            <button type="button" data-set-lang="tr" aria-label="Türkçe">TR</button>
+          </div>
         </nav>
         <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">Menu</button>
       </div>
@@ -34,21 +39,21 @@
       <div class="manifesto-shell">
         <article class="manifesto-card reveal">
           <div class="manifesto-head">
-            <div class="manifesto-kicker">Schematrix Manifesto</div>
-            <h1 class="manifesto-title">Not a product. A reaction.</h1>
-            <p class="manifesto-intro">A workspace built on refusing to accept, questioning everything, and rebuilding from the ground up.</p>
+            <div class="manifesto-kicker" data-i18n="man_kicker">Schematrix Manifesto</div>
+            <h1 class="manifesto-title" data-i18n="man_heading">Not a product. A reaction.</h1>
+            <p class="manifesto-intro" data-i18n="man_intro">A workspace built on refusing to accept, questioning everything, and rebuilding from the ground up.</p>
           </div>
 
           <div class="manifesto-body">
-            <p>Schematrix is not a product, it's a reaction. The system you live inside sells you speed, convenience, and comfort — but in return it takes the most critical thing from you: the effort of thinking. It hands you tools but hides how they work. It turns you into a user, not a creator. And before long, without noticing, you accept it: "it works" feels like enough, questioning feels unnecessary, and digging deeper feels like a waste of time. That's exactly where Schematrix begins: by rejecting that acceptance.</p>
-            <p>This is a space for people who refuse to stay on the surface. Here, no system is sacred, no technology is untouchable, no solution is final. Everything can be taken apart, analyzed, and made better. Because if you actually want to control something, you can't just use it — you have to understand it, see its limits, and rebuild it when necessary. Otherwise the control isn't yours; it belongs to whoever built what you were handed.</p>
-            <p>The system pushes you toward fast results, because a fast result doesn't produce a thinking mind. That's why copy-paste culture exists. It wants you to move forward by stitching working pieces together, without reading the docs, without grasping the logic. Because a person who digs deep becomes independent. And an independently thinking person can't be steered. Schematrix exists to break that cycle.</p>
-            <p>Here, "it works" isn't a result — it's a starting point. If something works, you have to know why it works. Could it run faster? Could it use fewer resources? Is there a simpler solution? No system is considered finished until these questions are asked. Because optimization isn't a luxury, it's a discipline. And without discipline, there's no real engineering.</p>
-            <p>The Schematrix mindset doesn't run from complexity. It treats complexity not as a threat, but as a structure to be solved — breaking it into layers, modeling it, simplifying it. Because what you call chaos is, most of the time, just an order you haven't understood yet. It limits you as long as you don't understand it; the moment you do, it becomes your advantage. So the goal here isn't to simplify first — it's to understand first, then simplify.</p>
-            <p>This isn't a community, it's a filtering mechanism. Anyone can look, but not everyone stays. Because this mindset demands patience, attention, and the capacity to sit with discomfort. It requires being willing to spend hours on a single problem, and if necessary, to tear everything down and rebuild from zero. There's no room here for those who choose the easy path.</p>
-            <p>Schematrix doesn't stop at criticizing the system from the outside — it steps inside, solves it, and pushes its limits. Because real power doesn't lie in opposing something, it lies in understanding it. You can change what you understand. You can only use what you don't.</p>
-            <p>And here's the most critical part: once you've gained this perspective, there's no going back. No interface will ever feel like enough again, no "black box" will satisfy you. You'll want to see behind everything. Because now you know: no matter how flawless a system looks, something better is always possible.</p>
-            <p><strong>Schematrix is built on exactly that: refusing to accept, questioning, and rebuilding.</strong></p>
+            <p data-i18n="man_p1">Schematrix is not a product, it's a reaction. The system you live inside sells you speed, convenience, and comfort — but in return it takes the most critical thing from you: the effort of thinking. It hands you tools but hides how they work. It turns you into a user, not a creator. And before long, without noticing, you accept it: "it works" feels like enough, questioning feels unnecessary, and digging deeper feels like a waste of time. That's exactly where Schematrix begins: by rejecting that acceptance.</p>
+            <p data-i18n="man_p2">This is a space for people who refuse to stay on the surface. Here, no system is sacred, no technology is untouchable, no solution is final. Everything can be taken apart, analyzed, and made better. Because if you actually want to control something, you can't just use it — you have to understand it, see its limits, and rebuild it when necessary. Otherwise the control isn't yours; it belongs to whoever built what you were handed.</p>
+            <p data-i18n="man_p3">The system pushes you toward fast results, because a fast result doesn't produce a thinking mind. That's why copy-paste culture exists. It wants you to move forward by stitching working pieces together, without reading the docs, without grasping the logic. Because a person who digs deep becomes independent. And an independently thinking person can't be steered. Schematrix exists to break that cycle.</p>
+            <p data-i18n="man_p4">Here, "it works" isn't a result — it's a starting point. If something works, you have to know why it works. Could it run faster? Could it use fewer resources? Is there a simpler solution? No system is considered finished until these questions are asked. Because optimization isn't a luxury, it's a discipline. And without discipline, there's no real engineering.</p>
+            <p data-i18n="man_p5">The Schematrix mindset doesn't run from complexity. It treats complexity not as a threat, but as a structure to be solved — breaking it into layers, modeling it, simplifying it. Because what you call chaos is, most of the time, just an order you haven't understood yet. It limits you as long as you don't understand it; the moment you do, it becomes your advantage. So the goal here isn't to simplify first — it's to understand first, then simplify.</p>
+            <p data-i18n="man_p6">This isn't a community, it's a filtering mechanism. Anyone can look, but not everyone stays. Because this mindset demands patience, attention, and the capacity to sit with discomfort. It requires being willing to spend hours on a single problem, and if necessary, to tear everything down and rebuild from zero. There's no room here for those who choose the easy path.</p>
+            <p data-i18n="man_p7">Schematrix doesn't stop at criticizing the system from the outside — it steps inside, solves it, and pushes its limits. Because real power doesn't lie in opposing something, it lies in understanding it. You can change what you understand. You can only use what you don't.</p>
+            <p data-i18n="man_p8">And here's the most critical part: once you've gained this perspective, there's no going back. No interface will ever feel like enough again, no "black box" will satisfy you. You'll want to see behind everything. Because now you know: no matter how flawless a system looks, something better is always possible.</p>
+            <p data-i18n-html="man_p9"><strong>Schematrix is built on exactly that: refusing to accept, questioning, and rebuilding.</strong></p>
           </div>
         </article>
       </div>
@@ -58,7 +63,7 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <p>© 2026 Schematrix — Independent Technology Studio</p>
+        <p data-i18n="footer_copy">© 2026 Schematrix — Independent Technology Studio</p>
         <div class="footer-social">
           <a href="https://instagram.com/schematrix.io" target="_blank">Instagram</a>
           <span>·</span>
@@ -68,6 +73,7 @@
     </div>
   </footer>
 
+  <script src="./i18n.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
