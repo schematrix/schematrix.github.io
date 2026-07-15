@@ -59,6 +59,139 @@
     });
   });
 
+  /* ── Interactive mesh diagram (meschy.html) ─ */
+  const meshViz = document.querySelector('.mesh-viz');
+  if (meshViz) {
+    const chat = document.getElementById('meshChat');
+    const cliLog = document.getElementById('meshCliLog');
+    const input = document.getElementById('meshInput');
+    const sendBtn = document.getElementById('meshSend');
+
+    const NODES = [
+      { key: 'b1', name: 'Atlas' },
+      { key: 'b2', name: 'Vega' },
+      { key: 'b3', name: 'Orion' },
+      { key: 'b4', name: 'Lyra' },
+      { key: 'b5', name: 'Nova' },
+      { key: 'b6', name: 'Echo' }
+    ];
+    const REPLY_KEYS = ['mesh_reply_1', 'mesh_reply_2', 'mesh_reply_3', 'mesh_reply_4', 'mesh_reply_5', 'mesh_reply_6'];
+    const USER_NAME = 'Meschy-01';
+
+    const run = (selector) => {
+      meshViz.querySelectorAll(selector).forEach((el) => {
+        el.classList.remove('run');
+        void el.getBoundingClientRect(); /* restart animation */
+        el.classList.add('run');
+      });
+    };
+    meshViz.querySelectorAll('.mv-pkt, .mv-ripple').forEach((el) => {
+      el.addEventListener('animationend', () => el.classList.remove('run'));
+    });
+
+    const setScreen = (node, sender, text) => {
+      const msgEl = meshViz.querySelector('.mv-screen[data-node="' + node.key + '"] .mv-screen-msg');
+      if (!msgEl) return;
+      msgEl.removeAttribute('data-i18n');
+      msgEl.textContent = sender + ' ▸ ' + text;
+      msgEl.classList.remove('pop');
+      void msgEl.offsetWidth;
+      msgEl.classList.add('pop');
+    };
+
+    const addCli = (sender, text) => {
+      const line = document.createElement('div');
+      line.textContent = '[' + sender + '] ▸ ' + text;
+      cliLog.appendChild(line);
+      while (cliLog.children.length > 5) cliLog.removeChild(cliLog.firstChild);
+    };
+
+    const addBubble = (text, sender) => {
+      const bubble = document.createElement('div');
+      bubble.className = sender ? 'mv-msg in' : 'mv-msg';
+      if (sender) {
+        const who = document.createElement('div');
+        who.className = 'mv-msg-sender';
+        who.textContent = sender;
+        bubble.appendChild(who);
+      }
+      bubble.appendChild(document.createTextNode(text));
+      chat.appendChild(bubble);
+      while (chat.children.length > 6) chat.removeChild(chat.firstChild);
+    };
+
+    /* a node transmits a reply: ripple at the node, hop to Meschy,
+       Meschy rebroadcasts to everyone (phone + other nodes + CLI) */
+    function nodeReply(node) {
+      const t = window.SchematrixI18N ? window.SchematrixI18N.t.bind(window.SchematrixI18N) : ((k) => k);
+      const text = t(REPLY_KEYS[Math.floor(Math.random() * REPLY_KEYS.length)]);
+      run('.mv-rip-' + node.key);
+      run('.mv-pkt-r' + node.key.slice(1));
+      setScreen(node, node.name, text);
+      setTimeout(() => {
+        run('.mv-rip-meschy');
+        NODES.forEach((other) => { if (other.key !== node.key) run('.mv-pkt-' + other.key); });
+        run('.mv-pkt-down');
+      }, 850);
+      setTimeout(() => {
+        NODES.forEach((other) => { if (other.key !== node.key) setScreen(other, node.name, text); });
+        addBubble(text, node.name);
+        run('.mv-pkt-u1');
+      }, 1750);
+      setTimeout(() => addCli(node.name, text), 2200);
+    }
+
+    /* user sends: BLE to Meschy, Meschy ripples + broadcasts,
+       every node receives (and rebroadcasts), CLI logs it, nodes answer */
+    function sendMeshMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      input.focus();
+
+      const hint = document.getElementById('meshHint');
+      if (hint) hint.classList.add('mv-hint-hide');
+
+      addBubble(text, null);
+      run('.mv-pkt-up');
+      setTimeout(() => {
+        run('.mv-rip-meschy');
+        NODES.forEach((n) => run('.mv-pkt-' + n.key));
+      }, 850);
+      setTimeout(() => {
+        NODES.forEach((n) => { run('.mv-rip-' + n.key); setScreen(n, USER_NAME, text); });
+        run('.mv-pkt-u1');
+      }, 1750);
+      setTimeout(() => addCli(USER_NAME, text), 2200);
+
+      /* 1-2 random nodes reply */
+      const shuffled = NODES.slice().sort(() => Math.random() - 0.5);
+      shuffled.slice(0, 1 + Math.floor(Math.random() * 2)).forEach((node, i) => {
+        setTimeout(() => nodeReply(node), 3400 + i * 3200);
+      });
+    }
+
+    if (input && sendBtn) {
+      sendBtn.addEventListener('click', sendMeshMessage);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') sendMeshMessage();
+      });
+    }
+
+    /* ambient mesh telemetry: quiet radio chatter, no screen/log changes */
+    setInterval(() => {
+      if (document.hidden) return;
+      const node = NODES[Math.floor(Math.random() * NODES.length)];
+      if (Math.random() < 0.5) {
+        run('.mv-rip-' + node.key);
+        run('.mv-pkt-r' + node.key.slice(1));
+      } else {
+        run('.mv-rip-meschy');
+        run('.mv-pkt-' + node.key);
+      }
+    }, 6000);
+  }
+
   /* ── Smooth active link highlight ──────── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('nav a').forEach(link => {

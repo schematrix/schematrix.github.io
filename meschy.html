@@ -6,7 +6,7 @@
   <title data-i18n="meschy_title">Schematrix | Meschy — Development Platform</title>
   <meta name="description" content="Meschy — an open-source LoRa and nRF52840-based development platform. Meshtastic-compatible." data-i18n-content="meschy_meta" />
   <meta name="theme-color" content="#F2F0EB" />
-  <link rel="stylesheet" href="./style.css?v=20260715-1" />
+  <link rel="stylesheet" href="./style.css?v=20260715-5" />
 </head>
 <body>
 
@@ -149,6 +149,174 @@
     </div>
   </section>
 
+  <!-- INTERACTIVE MESH DIAGRAM -->
+  <section class="page mesh-viz-section">
+    <div class="container project-detail">
+      <div class="section-label reveal" data-i18n="mesh_label">Ecosystem</div>
+      <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);" data-i18n="mesh_heading">One Mesh, Every Device</h3>
+      <p class="section-subtitle reveal" data-i18n="mesh_sub">Meschy speaks LoRa with the entire Meshtastic ecosystem — phones join over Bluetooth, computers over USB. Watch a message hop across the mesh:</p>
+
+      <div class="mesh-viz-scroll reveal">
+        <svg class="mesh-viz" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Meschy mesh network diagram">
+
+          <defs>
+            <marker id="mvArrowHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" class="mv-hint-arrowhead" />
+            </marker>
+          </defs>
+
+          <rect class="mv-bg" x="0" y="0" width="1200" height="660" />
+
+          <!-- glow behind Meschy -->
+          <circle class="mv-glow" cx="585" cy="281" r="105" />
+
+          <!-- ── links (under devices) ── -->
+          <g class="mv-links">
+            <line class="mv-lora" x1="445" y1="143" x2="585" y2="281" />
+            <line class="mv-lora" x1="742" y1="127" x2="585" y2="281" />
+            <line class="mv-lora" x1="952" y1="236" x2="585" y2="281" />
+            <line class="mv-lora" x1="385" y1="415" x2="585" y2="281" />
+            <line class="mv-lora" x1="640" y1="500" x2="585" y2="281" />
+            <line class="mv-lora" x1="840" y1="442" x2="585" y2="281" />
+            <line class="mv-lora" x1="742" y1="127" x2="952" y2="236" />
+            <line class="mv-lora" x1="445" y1="143" x2="385" y2="415" />
+            <line class="mv-ble"  x1="262" y1="345" x2="585" y2="281" />
+            <line class="mv-usb"  x1="840" y1="442" x2="958" y2="470" />
+          </g>
+
+          <!-- ── packets ── -->
+          <g class="mv-packets">
+            <circle class="mv-pkt mv-pkt-ble mv-pkt-up" r="5" />
+            <circle class="mv-pkt mv-pkt-ble mv-pkt-down" r="5" />
+            <circle class="mv-pkt mv-pkt-b1" r="4.5" />
+            <circle class="mv-pkt mv-pkt-b2" r="4.5" />
+            <circle class="mv-pkt mv-pkt-b3" r="4.5" />
+            <circle class="mv-pkt mv-pkt-b4" r="4.5" />
+            <circle class="mv-pkt mv-pkt-b5" r="4.5" />
+            <circle class="mv-pkt mv-pkt-b6" r="4.5" />
+            <circle class="mv-pkt mv-pkt-r1" r="4.5" />
+            <circle class="mv-pkt mv-pkt-r2" r="4.5" />
+            <circle class="mv-pkt mv-pkt-r3" r="4.5" />
+            <circle class="mv-pkt mv-pkt-r4" r="4.5" />
+            <circle class="mv-pkt mv-pkt-r5" r="4.5" />
+            <circle class="mv-pkt mv-pkt-r6" r="4.5" />
+            <circle class="mv-pkt mv-pkt-usb mv-pkt-u1" r="4.5" />
+          </g>
+
+          <!-- ── device nodes ── -->
+          <image href="./images/nodes/heltec.png"  x="350" y="96"  width="190" height="94" />
+          <image href="./images/nodes/rak.svg"     x="700" y="42"  width="84"  height="170" />
+          <image href="./images/nodes/station.svg" x="905" y="148" width="95"  height="175" />
+          <image href="./images/nodes/tbeam.png" x="310" y="350" width="150" height="130" />
+          <image href="./images/nodes/tdeck.png" x="585" y="415" width="110" height="170" />
+          <image href="./images/nodes/faketec.png" x="762" y="382" width="155" height="120" />
+          <image href="./images/nodes/meschy.png"  x="485" y="205" width="200" height="152" />
+
+          <!-- ── radio ripples (over devices, like real RF waves) ── -->
+          <g class="mv-ripples">
+            <circle class="mv-ripple mv-rip-meschy" cx="585" cy="281" r="50" />
+            <circle class="mv-ripple mv-rip-meschy mv-rip-late" cx="585" cy="281" r="50" />
+            <circle class="mv-ripple mv-rip-b1" cx="445" cy="143" r="50" />
+            <circle class="mv-ripple mv-rip-b2" cx="742" cy="127" r="50" />
+            <circle class="mv-ripple mv-rip-b3" cx="952" cy="236" r="50" />
+            <circle class="mv-ripple mv-rip-b4" cx="385" cy="415" r="50" />
+            <circle class="mv-ripple mv-rip-b5" cx="640" cy="500" r="50" />
+            <circle class="mv-ripple mv-rip-b6" cx="840" cy="442" r="50" />
+          </g>
+
+          <!-- ── node screens ── -->
+          <foreignObject x="375" y="200" width="140" height="44">
+            <div class="mv-screen" data-node="b1" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="mv-screen-head">Atlas <span data-i18n="mesh_role_client">Client</span></div>
+              <div class="mv-screen-msg" data-i18n="mesh_screen_idle">online</div>
+            </div>
+          </foreignObject>
+          <foreignObject x="692" y="224" width="140" height="44">
+            <div class="mv-screen" data-node="b2" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="mv-screen-head">Vega <span data-i18n="mesh_role_client">Client</span></div>
+              <div class="mv-screen-msg" data-i18n="mesh_screen_idle">online</div>
+            </div>
+          </foreignObject>
+          <foreignObject x="882" y="333" width="140" height="44">
+            <div class="mv-screen" data-node="b3" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="mv-screen-head">Orion <span data-i18n="mesh_role_client">Client</span></div>
+              <div class="mv-screen-msg" data-i18n="mesh_screen_idle">online</div>
+            </div>
+          </foreignObject>
+          <foreignObject x="315" y="492" width="140" height="44">
+            <div class="mv-screen" data-node="b4" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="mv-screen-head">Lyra <span data-i18n="mesh_role_client">Client</span></div>
+              <div class="mv-screen-msg" data-i18n="mesh_screen_idle">online</div>
+            </div>
+          </foreignObject>
+          <foreignObject x="570" y="597" width="140" height="44">
+            <div class="mv-screen" data-node="b5" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="mv-screen-head">Nova <span data-i18n="mesh_role_client">Client</span></div>
+              <div class="mv-screen-msg" data-i18n="mesh_screen_idle">online</div>
+            </div>
+          </foreignObject>
+          <foreignObject x="770" y="514" width="140" height="44">
+            <div class="mv-screen" data-node="b6" xmlns="http://www.w3.org/1999/xhtml">
+              <div class="mv-screen-head">Echo <span data-i18n="mesh_role_client">Client</span></div>
+              <div class="mv-screen-msg" data-i18n="mesh_screen_idle">online</div>
+            </div>
+          </foreignObject>
+
+          <text class="mv-name" x="585" y="381">Meschy-01</text>
+          <text class="mv-role" x="585" y="399" data-i18n="mesh_role_router">Router</text>
+
+          <!-- ── phone mockup ── -->
+          <g class="mv-phone">
+            <rect x="46" y="120" width="214" height="440" rx="30" class="mv-phone-body" />
+            <rect x="58" y="132" width="190" height="416" rx="20" class="mv-phone-screen" />
+            <text class="mv-phone-time" x="76" y="160">16:11</text>
+            <text class="mv-phone-title" x="76" y="194">MESCHY</text>
+            <text class="mv-phone-sub" x="76" y="212" data-i18n="mesh_phone_channel">Primary Channel</text>
+
+            <foreignObject x="66" y="222" width="176" height="270">
+              <div class="mv-chat" id="meshChat" xmlns="http://www.w3.org/1999/xhtml"></div>
+            </foreignObject>
+
+            <foreignObject x="66" y="496" width="176" height="44">
+              <div class="mv-input-row" xmlns="http://www.w3.org/1999/xhtml">
+                <input id="meshInput" type="text" maxlength="60" autocomplete="off" placeholder="Type..." data-i18n-placeholder="mesh_phone_type" />
+                <button id="meshSend" type="button" aria-label="Send">&#9654;</button>
+              </div>
+            </foreignObject>
+          </g>
+
+          <!-- ── "type here" hint ── -->
+          <g class="mv-hint" id="meshHint">
+            <path class="mv-hint-line" d="M 208 630 C 140 626, 112 590, 140 554" marker-end="url(#mvArrowHead)" />
+            <text x="218" y="637" data-i18n="mesh_hint">(type here)</text>
+          </g>
+
+          <!-- ── CLI window ── -->
+          <g class="mv-cli">
+            <rect x="950" y="390" width="230" height="200" rx="12" class="mv-cli-body" />
+            <circle cx="970" cy="412" r="4.5" fill="#FF5F57" />
+            <circle cx="985" cy="412" r="4.5" fill="#FEBC2E" />
+            <circle cx="1000" cy="412" r="4.5" fill="#28C840" />
+            <text class="mv-cli-title" x="1090" y="416" text-anchor="middle">meschy-cli</text>
+            <foreignObject x="962" y="428" width="206" height="148">
+              <div class="mv-cli-log" id="meshCliLog" xmlns="http://www.w3.org/1999/xhtml"></div>
+            </foreignObject>
+          </g>
+
+          <!-- ── legend ── -->
+          <g class="mv-legend">
+            <line class="mv-lora" x1="430" y1="678" x2="462" y2="678" style="opacity:.7" />
+            <text x="470" y="682">LoRa</text>
+            <line class="mv-ble" x1="540" y1="678" x2="572" y2="678" />
+            <text x="580" y="682">Bluetooth</text>
+            <line class="mv-usb" x1="680" y1="678" x2="712" y2="678" />
+            <text x="720" y="682">USB</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <!-- BEJ BANNER -->
   <section class="banner-bej">
     <div class="container">
@@ -236,7 +404,7 @@
     </div>
   </footer>
 
-  <script src="./i18n.js?v=20260715-1"></script>
-  <script src="./script.js?v=20260715-1"></script>
+  <script src="./i18n.js?v=20260715-5"></script>
+  <script src="./script.js?v=20260715-5"></script>
 </body>
 </html>

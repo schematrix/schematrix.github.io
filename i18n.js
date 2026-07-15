@@ -100,6 +100,21 @@
       meschy_uc6_p: "Build your own project with nRF52840 + LoRa. GPIO, BLE, and USB-C ready to go.",
       meschy_banner2_h: "A Contribution to the Meshtastic Community",
       meschy_banner2_p: "Meschy is fully compatible with the Meshtastic ecosystem and communicates directly with Meshtastic users worldwide. We built this project as Schematrix's contribution from Turkey to the global community.",
+      mesh_label: "Ecosystem",
+      mesh_heading: "One Mesh, Every Device",
+      mesh_sub: "Meschy speaks LoRa with the entire Meshtastic ecosystem — phones join over Bluetooth, computers over USB. Send a message, watch it ripple across the mesh, and the nodes will answer:",
+      mesh_screen_idle: "online",
+      mesh_reply_1: "Copy that 👍",
+      mesh_reply_2: "Strong signal, 3 hops.",
+      mesh_reply_3: "Position shared.",
+      mesh_reply_4: "Here and listening.",
+      mesh_reply_5: "Battery at 87%.",
+      mesh_reply_6: "Message received.",
+      mesh_role_client: "Client",
+      mesh_role_router: "Router",
+      mesh_phone_channel: "Primary Channel",
+      mesh_phone_type: "Type...",
+      mesh_hint: "(type here)",
       explore_label: "Explore",
       meschy_videos_heading: "A Closer Look at Meschy",
       meschy_videos_sub: "Explore the device's features and use cases.",
@@ -264,6 +279,21 @@
       meschy_uc6_p: "nRF52840 + LoRa ile kendi projeni geliştir. GPIO, BLE ve USB-C hazır.",
       meschy_banner2_h: "Meshtastic Topluluğuna Bir Katkı",
       meschy_banner2_p: "Meschy, Meshtastic ekosistemiyle tamamen uyumludur ve dünyanın dört bir yanındaki Meshtastic kullanıcılarıyla doğrudan haberleşir. Bu projeyi, Schematrix'in Türkiye'den küresel topluluğa katkısı olarak geliştirdik.",
+      mesh_label: "Ekosistem",
+      mesh_heading: "Tek Ağ, Bütün Cihazlar",
+      mesh_sub: "Meschy, LoRa üzerinden tüm Meshtastic ekosistemiyle konuşur — telefonlar Bluetooth ile, bilgisayarlar USB ile ağa katılır. Bir mesaj gönder, ağda dalga dalga yayılışını izle; düğümler sana cevap verecek:",
+      mesh_screen_idle: "çevrimiçi",
+      mesh_reply_1: "Anlaşıldı 👍",
+      mesh_reply_2: "Sinyal güçlü, 3 sekme.",
+      mesh_reply_3: "Konum paylaşıldı.",
+      mesh_reply_4: "Buradayım, dinlemedeyim.",
+      mesh_reply_5: "Batarya %87.",
+      mesh_reply_6: "Mesaj alındı.",
+      mesh_role_client: "İstemci",
+      mesh_role_router: "Yönlendirici",
+      mesh_phone_channel: "Ana Kanal",
+      mesh_phone_type: "Yaz...",
+      mesh_hint: "(buraya yaz)",
       explore_label: "Keşfet",
       meschy_videos_heading: "Meschy'ye Yakından Bakış",
       meschy_videos_sub: "Cihazın özelliklerini ve kullanım senaryolarını keşfet.",
@@ -365,6 +395,11 @@
     document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
       const key = el.getAttribute('data-i18n-alt');
       if (dict[key] != null) el.setAttribute('alt', dict[key]);
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
     });
 
     /* Switcher active state */
