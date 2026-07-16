@@ -1250,9 +1250,8 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
    ═══════════════════════════════════════════ */
 
 .wai-hero {
-  display: grid;
-  grid-template-columns: minmax(280px, 420px) 1fr;
-  gap: 28px; align-items: start;
+  display: flex;
+  justify-content: center;
 }
 
 /* photo card with blueprint grid */
@@ -1267,6 +1266,7 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   border-radius: var(--r-lg);
   padding: 26px 18px 0;
   cursor: pointer;
+  width: min(100%, 420px);
 }
 .wai-photo-img { width: 100%; display: block; image-rendering: pixelated; }
 .wai-photo-tag {
@@ -1279,9 +1279,10 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
 /* deal-with-it sunglasses */
 .wai-shades {
   position: absolute;
-  left: 23%; top: 26%;
-  width: 54%;
+  left: 50%; top: 50.5%;
+  width: 47%;
   opacity: 0;
+  transform: translateX(-50%);
   pointer-events: none;
   image-rendering: pixelated;
 }
@@ -1289,8 +1290,8 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   animation: waiShadesDrop 1.1s steps(9, end) forwards;
 }
 @keyframes waiShadesDrop {
-  0% { transform: translateY(-340%); opacity: 1; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% { transform: translate(-50%, -340%); opacity: 1; }
+  100% { transform: translate(-50%, 0); opacity: 1; }
 }
 
 .wai-spec .spec-item { background: var(--bej-light); }
@@ -1432,48 +1433,34 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   bottom: 0; left: 0;
   width: 112px; height: 94px;
   z-index: 90;
-  cursor: pointer;
+  cursor: grab;
+  touch-action: none;
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
+.char-buddy.is-dragged { cursor: grabbing; }
+.char-buddy.is-dragged img { filter: drop-shadow(0 8px 7px rgba(21,31,69,.22)); }
+.char-buddy.is-dragged img[src$="anxious.png"] { animation: charAnxious .12s steps(2, end) infinite; }
+.char-buddy.is-falling img { animation: charFall .28s ease-in-out infinite alternate; }
+.char-buddy.flip.is-falling img { animation-name: charFallFlip; }
 .char-buddy img {
   position: absolute;
   bottom: 0; left: 50%;
-  width: 112px; height: auto;
+  height: 88px; width: auto;
   transform: translateX(-50%);
   transform-origin: 50% 100%;
+  image-rendering: pixelated;
   pointer-events: none;
 }
 .char-buddy.flip img { transform: translateX(-50%) scaleX(-1); }
-.char-buddy.is-walking img { animation: charWalk .62s ease-in-out infinite; }
-.char-buddy.is-fleeing img { animation: charRun .22s ease-in-out infinite; }
-.char-buddy.is-idle img { animation: charIdle 2s ease-in-out infinite; }
 .char-buddy.is-caught img { animation: charCaught .35s ease-out both; }
-.char-buddy.flip.is-walking img { animation-name: charWalkFlip; }
-.char-buddy.flip.is-fleeing img { animation-name: charRunFlip; }
-.char-buddy.flip.is-idle img { animation-name: charIdleFlip; }
 .char-buddy.flip.is-caught img { animation-name: charCaughtFlip; }
-@keyframes charWalk {
-  0%, 100% { transform: translateX(-50%) translateY(0) rotate(-1.5deg); }
-  50% { transform: translateX(-50%) translateY(-4px) rotate(1.5deg); }
-}
-@keyframes charWalkFlip {
-  0%, 100% { transform: translateX(-50%) translateY(0) scaleX(-1) rotate(-1.5deg); }
-  50% { transform: translateX(-50%) translateY(-4px) scaleX(-1) rotate(1.5deg); }
-}
-@keyframes charRun {
-  0%, 100% { transform: translateX(-50%) translateY(0) rotate(-4deg) scaleY(.97); }
-  50% { transform: translateX(-50%) translateY(-7px) rotate(4deg) scaleY(1.03); }
-}
-@keyframes charRunFlip {
-  0%, 100% { transform: translateX(-50%) translateY(0) scaleX(-1) scaleY(.97) rotate(-4deg); }
-  50% { transform: translateX(-50%) translateY(-7px) scaleX(-1) scaleY(1.03) rotate(4deg); }
-}
-@keyframes charIdle { 0%, 100% { transform: translateX(-50%); } 50% { transform: translateX(-50%) translateY(-2px); } }
-@keyframes charIdleFlip { 0%, 100% { transform: translateX(-50%) scaleX(-1); } 50% { transform: translateX(-50%) translateY(-2px) scaleX(-1); } }
 @keyframes charCaught { from { transform: translateX(-50%) scale(.92); } to { transform: translateX(-50%) scale(1); } }
 @keyframes charCaughtFlip { from { transform: translateX(-50%) scaleX(-1) scale(.92); } to { transform: translateX(-50%) scaleX(-1) scale(1); } }
+@keyframes charFall { from { transform: translateX(-50%) rotate(-3deg); } to { transform: translateX(-50%) rotate(3deg); } }
+@keyframes charFallFlip { from { transform: translateX(-50%) scaleX(-1) rotate(-3deg); } to { transform: translateX(-50%) scaleX(-1) rotate(3deg); } }
+@keyframes charAnxious { from { margin-left: -1px; } to { margin-left: 1px; } }
 .pb-bubble {
   position: absolute;
   bottom: 88px; left: 50%;

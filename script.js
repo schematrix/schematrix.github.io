@@ -214,7 +214,7 @@
 
   /* ── Who am I: skill mesh ───────────────── */
   const skillPanel = document.getElementById('waiSkillPanel');
-  if (skillPanel) {
+  if (skillPanel && !skillPanel.closest('[hidden]')) {
     const titleEl = document.getElementById('waiSkillTitle');
     const descEl = document.getElementById('waiSkillDesc');
     const tt = (key) => (window.SchematrixI18N ? window.SchematrixI18N.t(key) : key);
@@ -243,11 +243,25 @@
 
   /* ── SVG buddy: mini-Burak roams the Who am I page ── */
   if (document.querySelector('.wai-hero') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const FRAME_NAMES = ['walk1', 'walk2', 'walk3', 'run1', 'run2', 'run3', 'run4', 'anxious'];
+    FRAME_NAMES.forEach((name) => {
+      const frame = new Image();
+      frame.src = './images/char/' + name + '.png';
+    });
+    const SEQUENCES = {
+      walk: ['walk1', 'walk2', 'walk3', 'walk2'],
+      flee: ['run1', 'run2', 'run3', 'run4'],
+      idle: ['walk2'],
+      caught: ['walk2'],
+      dragged: ['walk2'],
+      falling: ['walk2']
+    };
+
     const buddy = document.createElement('div');
     buddy.className = 'char-buddy is-walking';
     buddy.setAttribute('aria-hidden', 'true');
     const sprite = document.createElement('img');
-    sprite.src = './cv/char.svg';
+    sprite.src = './images/char/walk2.png';
     sprite.alt = '';
     sprite.draggable = false;
     const bubble = document.createElement('div');
@@ -262,18 +276,25 @@
     const maxX = () => Math.max(8, window.innerWidth - BW - 8);
 
     let x = 8 + Math.random() * (maxX() - 8);
+    let lift = 0;
     let dir = 1;
     let state = 'walk';
     let targetX = 8 + Math.random() * (maxX() - 8);
     let idleLeft = 0;
+    let frameIndex = 0, frameLeft = 0, currentFrame = '';
     let mouseX = -1e4, mouseY = -1e4;
     let immuneUntil = 0;
+    let dragging = false;
+    let dragPointer = null;
+    let bubbleTimer = null;
 
     const tt = (k) => (window.SchematrixI18N ? window.SchematrixI18N.t(k) : k);
     const setState = (s) => {
       if (state === s) return;
       state = s;
-      buddy.classList.remove('is-walking', 'is-fleeing', 'is-idle', 'is-caught');
+      frameIndex = 0;
+      frameLeft = 0;
+      buddy.classList.remove('is-walking', 'is-fleeing', 'is-idle', 'is-caught', 'is-dragged', 'is-falling');
       buddy.classList.add('is-' + (s === 'walk' ? 'walking' : s === 'flee' ? 'fleeing' : s));
     };
     const newTarget = () => { targetX = 8 + Math.random() * (maxX() - 8); };
@@ -283,22 +304,37 @@
         mouseX = e.clientX;
         mouseY = e.clientY;
       }
-    }, { passive: true });
+      if (dragging && e.pointerId === dragPointer) {
+        e.preventDefault();
+        x = Math.max(8, Math.min(maxX(), e.clientX - BW / 2));
+        lift = Math.max(0, Math.min(window.innerHeight - 94, window.innerHeight - e.clientY - 47));
+      }
+    }, { passive: false });
 
-    const caught = () => {
-      if (state === 'caught' || performance.now() < immuneUntil) return;
-      setState('caught');
+    const grab = (e) => {
+      e.preventDefault();
+      dragging = true;
+      dragPointer = e.pointerId;
+      buddy.setPointerCapture(e.pointerId);
+      setState('dragged');
       bubble.textContent = tt('char_caught_' + (1 + Math.floor(Math.random() * 4)));
       buddy.classList.add('talking');
-      setTimeout(() => {
+      clearTimeout(bubbleTimer);
+      bubbleTimer = setTimeout(() => {
         buddy.classList.remove('talking');
-        immuneUntil = performance.now() + 2000;
-        newTarget();
-        setState('walk');
-      }, 2600);
+      }, 1600);
     };
-    buddy.addEventListener('mouseenter', caught);
-    buddy.addEventListener('click', caught);
+    const release = (e) => {
+      if (!dragging || e.pointerId !== dragPointer) return;
+      dragging = false;
+      dragPointer = null;
+      if (buddy.hasPointerCapture(e.pointerId)) buddy.releasePointerCapture(e.pointerId);
+      buddy.classList.remove('talking');
+      setState('falling');
+    };
+    buddy.addEventListener('pointerdown', grab);
+    buddy.addEventListener('pointerup', release);
+    buddy.addEventListener('pointercancel', release);
 
     let last = performance.now();
     const tick = (now) => {
@@ -306,11 +342,11 @@
       last = now;
       if (!document.hidden) {
         const cx = x + BW / 2;
-        const cy = window.innerHeight - 46;
+        const cy = window.innerHeight - 46 - lift;
         const dx = cx - mouseX;
         const dist = Math.hypot(dx, cy - mouseY);
 
-        if (state !== 'caught') {
+        if (!dragging && state !== 'falling') {
           if (dist < FLEE_AT && now >= immuneUntil) {
             setState('flee');
           } else if (state === 'flee' && dist > SAFE_AT) {
@@ -336,11 +372,32 @@
           /* Duck off one edge and re-enter on the other when cornered. */
           if (x <= 8 && dir === -1) x = maxX();
           else if (x >= maxX() && dir === 1) x = 8;
+        } else if (state === 'falling') {
+          lift = Math.max(0, lift - 720 * dt);
+          if (lift === 0) {
+            immuneUntil = now + 900;
+            newTarget();
+            setState('walk');
+          }
         }
         x = Math.max(8, Math.min(maxX(), x));
 
+        const sequence = SEQUENCES[state];
+        frameLeft -= dt;
+        if (frameLeft <= 0) {
+          frameLeft = state === 'flee' ? 0.085 : 0.16;
+          frameIndex = (frameIndex + 1) % sequence.length;
+        }
+        const nextFrame = state === 'dragged' && lift > 24
+          ? './images/char/anxious.png'
+          : './images/char/' + sequence[frameIndex] + '.png';
+        if (nextFrame !== currentFrame) {
+          currentFrame = nextFrame;
+          sprite.src = nextFrame;
+        }
+
         buddy.classList.toggle('flip', dir === -1);
-        buddy.style.transform = 'translateX(' + x + 'px)';
+        buddy.style.transform = 'translate(' + x + 'px, ' + (-lift) + 'px)';
       }
       requestAnimationFrame(tick);
     };
