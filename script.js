@@ -192,6 +192,161 @@
     }, 6000);
   }
 
+  /* ── Who am I: deal-with-it sunglasses ──── */
+  const waiPhoto = document.getElementById('waiPhoto');
+  if (waiPhoto) {
+    const dropShades = () => {
+      waiPhoto.classList.remove('on');
+      void waiPhoto.getBoundingClientRect();
+      waiPhoto.classList.add('on');
+    };
+    const shadesObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(dropShades, 500);
+          shadesObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    shadesObserver.observe(waiPhoto);
+    waiPhoto.addEventListener('click', dropShades);
+  }
+
+  /* ── Who am I: skill mesh ───────────────── */
+  const skillPanel = document.getElementById('waiSkillPanel');
+  if (skillPanel) {
+    const titleEl = document.getElementById('waiSkillTitle');
+    const descEl = document.getElementById('waiSkillDesc');
+    const tt = (key) => (window.SchematrixI18N ? window.SchematrixI18N.t(key) : key);
+
+    document.querySelectorAll('.wai-skill, .wai-skill-chip').forEach((node) => {
+      const select = () => {
+        const id = node.getAttribute('data-skill');
+        document.querySelectorAll('.wai-skill.active, .wai-skill-chip.active').forEach((n) => n.classList.remove('active'));
+        /* mirror the selection on both the SVG node and the mobile chip */
+        document.querySelectorAll('[data-skill="' + id + '"]').forEach((n) => n.classList.add('active'));
+        titleEl.textContent = node.getAttribute('data-name') || '';
+        descEl.removeAttribute('data-i18n');
+        descEl.textContent = tt('wai_sk' + id + '_d');
+        skillPanel.classList.remove('pop');
+        void skillPanel.offsetWidth;
+        skillPanel.classList.add('pop');
+      };
+      node.addEventListener('click', select);
+      if (node.tagName !== 'BUTTON') {
+        node.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(); }
+        });
+      }
+    });
+  }
+
+  /* ── SVG buddy: mini-Burak roams the Who am I page ── */
+  if (document.querySelector('.wai-hero') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const buddy = document.createElement('div');
+    buddy.className = 'char-buddy is-walking';
+    buddy.setAttribute('aria-hidden', 'true');
+    const sprite = document.createElement('img');
+    sprite.src = './cv/char.svg';
+    sprite.alt = '';
+    sprite.draggable = false;
+    const bubble = document.createElement('div');
+    bubble.className = 'pb-bubble';
+    buddy.appendChild(sprite);
+    buddy.appendChild(bubble);
+    document.body.appendChild(buddy);
+
+    const BW = 112;              /* buddy hitbox width */
+    const WALK = 38, RUN = 330;  /* px per second */
+    const FLEE_AT = 175, SAFE_AT = 320;
+    const maxX = () => Math.max(8, window.innerWidth - BW - 8);
+
+    let x = 8 + Math.random() * (maxX() - 8);
+    let dir = 1;
+    let state = 'walk';
+    let targetX = 8 + Math.random() * (maxX() - 8);
+    let idleLeft = 0;
+    let mouseX = -1e4, mouseY = -1e4;
+    let immuneUntil = 0;
+
+    const tt = (k) => (window.SchematrixI18N ? window.SchematrixI18N.t(k) : k);
+    const setState = (s) => {
+      if (state === s) return;
+      state = s;
+      buddy.classList.remove('is-walking', 'is-fleeing', 'is-idle', 'is-caught');
+      buddy.classList.add('is-' + (s === 'walk' ? 'walking' : s === 'flee' ? 'fleeing' : s));
+    };
+    const newTarget = () => { targetX = 8 + Math.random() * (maxX() - 8); };
+
+    document.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'mouse' || e.pointerType === 'pen') {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      }
+    }, { passive: true });
+
+    const caught = () => {
+      if (state === 'caught' || performance.now() < immuneUntil) return;
+      setState('caught');
+      bubble.textContent = tt('char_caught_' + (1 + Math.floor(Math.random() * 4)));
+      buddy.classList.add('talking');
+      setTimeout(() => {
+        buddy.classList.remove('talking');
+        immuneUntil = performance.now() + 2000;
+        newTarget();
+        setState('walk');
+      }, 2600);
+    };
+    buddy.addEventListener('mouseenter', caught);
+    buddy.addEventListener('click', caught);
+
+    let last = performance.now();
+    const tick = (now) => {
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      if (!document.hidden) {
+        const cx = x + BW / 2;
+        const cy = window.innerHeight - 46;
+        const dx = cx - mouseX;
+        const dist = Math.hypot(dx, cy - mouseY);
+
+        if (state !== 'caught') {
+          if (dist < FLEE_AT && now >= immuneUntil) {
+            setState('flee');
+          } else if (state === 'flee' && dist > SAFE_AT) {
+            newTarget();
+            idleLeft = 1 + Math.random() * 2;
+            setState(Math.random() < 0.4 ? 'idle' : 'walk');
+          }
+        }
+
+        if (state === 'walk') {
+          dir = targetX > x ? 1 : -1;
+          x += dir * WALK * dt;
+          if (Math.abs(x - targetX) < 4) {
+            idleLeft = 1.2 + Math.random() * 2.5;
+            setState('idle');
+          }
+        } else if (state === 'idle') {
+          idleLeft -= dt;
+          if (idleLeft <= 0) { newTarget(); setState('walk'); }
+        } else if (state === 'flee') {
+          dir = dx >= 0 ? 1 : -1;
+          x += dir * RUN * dt;
+          /* Duck off one edge and re-enter on the other when cornered. */
+          if (x <= 8 && dir === -1) x = maxX();
+          else if (x >= maxX() && dir === 1) x = 8;
+        }
+        x = Math.max(8, Math.min(maxX(), x));
+
+        buddy.classList.toggle('flip', dir === -1);
+        buddy.style.transform = 'translateX(' + x + 'px)';
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
   /* ── Smooth active link highlight ──────── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('nav a').forEach(link => {

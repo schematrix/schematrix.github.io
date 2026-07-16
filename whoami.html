@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="wai_title">Schematrix | Who am I</title>
+  <meta name="description" content="Burak Bozkurt — maker of Schematrix. Embedded engineer by day, hardware hacker by night." data-i18n-content="wai_meta" />
+  <meta name="theme-color" content="#F2F0EB" />
+  <link rel="stylesheet" href="./style.css?v=20260716-4" />
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="nav-top">
+        <a href="./index.html" class="logo">Schematrix</a>
+        <nav>
+          <a href="./index.html" data-i18n="nav_home">Home</a>
+          <a href="./projects.html" data-i18n="nav_projects">Projects</a>
+          <a href="./whoami.html" class="active" data-i18n="nav_whoami">Who am I</a>
+          <div class="nav-separator"></div>
+          <a href="https://instagram.com/schematrix.io" target="_blank" class="social-link">Instagram</a>
+          <a href="https://www.youtube.com/@schematrix" target="_blank" class="social-link">YouTube</a>
+          <div class="nav-separator"></div>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-set-lang="en" aria-label="English">EN</button>
+            <button type="button" data-set-lang="tr" aria-label="Türkçe">TR</button>
+          </div>
+        </nav>
+        <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="color-strip"></div>
+
+  <!-- HUMAN DATASHEET -->
+  <section class="page">
+    <div class="container">
+      <div class="wai-head">
+        <div class="section-label fade-up" data-i18n="wai_label">Human Datasheet</div>
+        <h2 class="section-title fade-up">Burak Bozkurt</h2>
+        <p class="section-subtitle fade-up" data-i18n="wai_sub">One human, two firmwares: by day I stress-test car lamps, by night I build my own circuits.</p>
+      </div>
+
+      <div class="wai-hero">
+        <div class="wai-photo reveal" id="waiPhoto">
+          <span class="wai-photo-tag">HUMAN · REV. 2026</span>
+          <img class="wai-photo-img" src="./images/whoami/pixel.png" alt="Burak Bozkurt (pixel art)" />
+          <img class="wai-shades" src="./images/whoami/sunglasses.png" alt="" aria-hidden="true" />
+        </div>
+
+        <div class="spec-grid wai-spec reveal">
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="wai_spec1_l">Location</div>
+            <div class="spec-value">Bursa, Türkiye</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="wai_spec2_l">Day Job</div>
+            <div class="spec-value" data-i18n="wai_spec2_v">Automotive embedded SW test &amp; validation</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="wai_spec3_l">Night Job</div>
+            <div class="spec-value" data-i18n="wai_spec3_v">Founder &amp; everything else @ Schematrix</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="wai_spec4_l">Interfaces</div>
+            <div class="spec-value">CAN · LIN · UDS · LoRa · BLE</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="wai_spec5_l">Power Source</div>
+            <div class="spec-value" data-i18n="wai_spec5_v">Coffee (min. 3 cups/day)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label" data-i18n="wai_spec6_l">Firmware</div>
+            <div class="spec-value" data-i18n="wai_spec6_v">Curiosity — updated daily</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANGELOG / TIMELINE -->
+  <section class="page">
+    <div class="container">
+      <div class="wai-head">
+        <div class="section-label reveal" data-i18n="wai_tl_label">Changelog</div>
+        <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);" data-i18n="wai_tl_heading">Release History</h3>
+        <p class="section-subtitle reveal" data-i18n="wai_tl_sub">Major versions of this human, in chronological order.</p>
+      </div>
+
+      <div class="wai-timeline">
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl1_y">v0.1 · 1990s</div>
+          <h4 data-i18n="wai_tl1_t">Initial commit</h4>
+          <p data-i18n="wai_tl1_d">First boot in Bursa. 100% organic hardware, zero documentation. Started the way all the best universes do: tiny, loud, and expanding fast.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl2_y">v0.4 · middle school</div>
+          <h4 data-i18n="wai_tl2_t">Warranty: voided</h4>
+          <p data-i18n="wai_tl2_d">Disassembled every remote control in the house to see what was inside. Reassembly success rate: ~60%. The leftover screws have never been explained.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl3_y">v0.5 · adolescence</div>
+          <h4 data-i18n="wai_tl3_t">Unstable release</h4>
+          <p data-i18n="wai_tl3_d">Hormone drivers installed themselves overnight. The voice module switched frequencies without notice, the hair subsystem went rogue, and every log from this period is best filed under "undefined behavior".</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl4_y">v0.6 · high school</div>
+          <h4 data-i18n="wai_tl4_t">Physics: unlocked</h4>
+          <p data-i18n="wai_tl4_d">Discovered that math and physics are cheat codes for the real world. Picked the electron path — a few fuses were harmed in the making of this decision.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl5_y">v0.7 · first loves</div>
+          <h4 data-i18n="wai_tl5_t">Pairing attempts</h4>
+          <p data-i18n="wai_tl5_d">Several romantic connections established; all eventually timed out. Learned a lot about handshake protocols, unexpected disconnects, and why you should never promise 100% uptime.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl6_y">v0.9 · the philosophy era</div>
+          <h4 data-i18n="wai_tl6_t">Existential kernel panic</h4>
+          <p data-i18n="wai_tl6_d">Read nonstop — cosmology, biology, philosophy — slid into a full ontological crisis and wrote a book to debug it. Concluded that one very loud instant plus a few billion years of iterative refactoring explain this entire changelog just fine, no external project manager required. Several builds from this era were compiled under heavy alcohol influence; all have since been deprecated.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl7_y">v1.0 · university</div>
+          <h4 data-i18n="wai_tl7_t">Soldering iron: acquired</h4>
+          <p data-i18n="wai_tl7_d">Started Electrical &amp; Electronics Engineering at university. First solder burn, first all-nighter, first "it works but I don't know why".</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl8_y">v1.2 · side quest</div>
+          <h4 data-i18n="wai_tl8_t">Teaching tiny hackers</h4>
+          <p data-i18n="wai_tl8_d">Taught robotics &amp; coding to kids for 6 months. They asked the best questions and broke things faster than any test rig.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl9_y">v1.4 · internships</div>
+          <h4 data-i18n="wai_tl9_t">First taste of industry</h4>
+          <p data-i18n="wai_tl9_d">Internships at a power utility and an automotive R&amp;D lab — then graduated as an EEE engineer.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl10_y">v1.5 · military</div>
+          <h4 data-i18n="wai_tl10_t">Mandatory system update</h4>
+          <p data-i18n="wai_tl10_d">Military service: the one update you can't postpone forever. Learned discipline, very short haircuts, and that "hurry up and wait" is a universal protocol.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl11_y">v2.0 · day job</div>
+          <h4 data-i18n="wai_tl11_t">Professional lamp breaker</h4>
+          <p data-i18n="wai_tl11_d">Joined a Tier-1 automotive supplier as Embedded SW Test &amp; Validation Engineer. HiL rigs, CAPL scripts and 9 OEM programs at once — brands you'd recognize from the highway.</p>
+        </div>
+        <div class="wai-tl-item reveal">
+          <div class="wai-tl-year" data-i18n="wai_tl12_y">v2.x · now</div>
+          <h4 data-i18n="wai_tl12_t">Schematrix: the night shift</h4>
+          <p data-i18n="wai_tl12_d">Nights and weekends became a studio: Meschy, an AI camera, this site — and a growing pile of prototypes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL MESH -->
+  <section class="page" style="background:var(--bej-light);">
+    <div class="container">
+      <div class="wai-head">
+        <div class="section-label reveal" data-i18n="wai_sk_label">Toolbox</div>
+        <h3 class="section-title reveal" style="font-size:clamp(24px,3vw,34px);" data-i18n="wai_sk_heading">Skill Mesh</h3>
+        <p class="section-subtitle reveal" data-i18n="wai_sk_sub">Same mesh, different nodes. Click one:</p>
+      </div>
+
+      <div class="wai-skills-stage reveal">
+        <svg class="wai-skills" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Skill mesh">
+          <defs>
+            <radialGradient id="wskGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1E2A5E" stop-opacity=".16" />
+              <stop offset="100%" stop-color="#1E2A5E" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+
+          <circle cx="450" cy="255" r="150" fill="url(#wskGlow)" />
+
+          <!-- links -->
+          <g class="wai-sk-links">
+            <path d="M450 255 Q340 160 235 120" />
+            <path d="M450 255 Q450 150 450 82"  />
+            <path d="M450 255 Q560 160 665 118" />
+            <path d="M450 255 Q640 220 790 205" />
+            <path d="M450 255 Q640 300 775 340" />
+            <path d="M450 255 Q560 370 640 428" />
+            <path d="M450 255 Q450 370 430 445" />
+            <path d="M450 255 Q330 360 235 412" />
+            <path d="M450 255 Q250 280 118 258" />
+            <!-- cross links -->
+            <path class="wai-sk-cross" d="M235 120 Q330 80 450 82" />
+            <path class="wai-sk-cross" d="M665 118 Q750 150 790 205" />
+            <path class="wai-sk-cross" d="M775 340 Q730 400 640 428" />
+            <path class="wai-sk-cross" d="M235 412 Q320 450 430 445" />
+            <path class="wai-sk-cross" d="M118 258 Q150 340 235 412" />
+          </g>
+
+          <!-- center node -->
+          <g class="wai-sk-center">
+            <circle class="wai-sk-pulse" cx="450" cy="255" r="52" />
+            <circle cx="450" cy="255" r="52" />
+            <text x="450" y="250">BURAK</text>
+            <text class="wai-sk-center-sub" x="450" y="268">EEE·MAKER</text>
+          </g>
+
+          <!-- skill nodes -->
+          <g class="wai-skill" data-skill="1" data-name="CAPL" transform="translate(235,120)" tabindex="0" role="button">
+            <rect x="-44" y="-19" width="88" height="38" rx="19" />
+            <text y="5">CAPL</text>
+          </g>
+          <g class="wai-skill" data-skill="2" data-name="CAN / LIN / UDS" transform="translate(450,82)" tabindex="0" role="button">
+            <rect x="-72" y="-19" width="144" height="38" rx="19" />
+            <text y="5">CAN·LIN·UDS</text>
+          </g>
+          <g class="wai-skill" data-skill="3" data-name="HiL Testing" transform="translate(665,118)" tabindex="0" role="button">
+            <rect x="-56" y="-19" width="112" height="38" rx="19" />
+            <text y="5">HiL Test</text>
+          </g>
+          <g class="wai-skill" data-skill="4" data-name="C / C++" transform="translate(790,205)" tabindex="0" role="button">
+            <rect x="-48" y="-19" width="96" height="38" rx="19" />
+            <text y="5">C / C++</text>
+          </g>
+          <g class="wai-skill" data-skill="5" data-name="PCB Design" transform="translate(775,340)" tabindex="0" role="button">
+            <rect x="-62" y="-19" width="124" height="38" rx="19" />
+            <text y="5">PCB Design</text>
+          </g>
+          <g class="wai-skill" data-skill="6" data-name="LoRa / Mesh" transform="translate(640,428)" tabindex="0" role="button">
+            <rect x="-64" y="-19" width="128" height="38" rx="19" />
+            <text y="5">LoRa / Mesh</text>
+          </g>
+          <g class="wai-skill" data-skill="7" data-name="AI Vision" transform="translate(430,445)" tabindex="0" role="button">
+            <rect x="-54" y="-19" width="108" height="38" rx="19" />
+            <text y="5">AI Vision</text>
+          </g>
+          <g class="wai-skill" data-skill="8" data-name="Python" transform="translate(235,412)" tabindex="0" role="button">
+            <rect x="-48" y="-19" width="96" height="38" rx="19" />
+            <text y="5">Python</text>
+          </g>
+          <g class="wai-skill" data-skill="9" data-name="ASPICE" transform="translate(118,258)" tabindex="0" role="button">
+            <rect x="-50" y="-19" width="100" height="38" rx="19" />
+            <text y="5">ASPICE</text>
+          </g>
+        </svg>
+
+        <!-- mobile fallback: chip cloud -->
+        <div class="wai-skill-cloud">
+          <button type="button" class="wai-skill-chip" data-skill="1" data-name="CAPL">CAPL</button>
+          <button type="button" class="wai-skill-chip" data-skill="2" data-name="CAN / LIN / UDS">CAN·LIN·UDS</button>
+          <button type="button" class="wai-skill-chip" data-skill="3" data-name="HiL Testing">HiL Test</button>
+          <button type="button" class="wai-skill-chip" data-skill="4" data-name="C / C++">C / C++</button>
+          <button type="button" class="wai-skill-chip" data-skill="5" data-name="PCB Design">PCB Design</button>
+          <button type="button" class="wai-skill-chip" data-skill="6" data-name="LoRa / Mesh">LoRa / Mesh</button>
+          <button type="button" class="wai-skill-chip" data-skill="7" data-name="AI Vision">AI Vision</button>
+          <button type="button" class="wai-skill-chip" data-skill="8" data-name="Python">Python</button>
+          <button type="button" class="wai-skill-chip" data-skill="9" data-name="ASPICE">ASPICE</button>
+        </div>
+      </div>
+
+      <div class="wai-sk-panel reveal" id="waiSkillPanel">
+        <div class="wai-sk-panel-title" id="waiSkillTitle">///</div>
+        <p class="wai-sk-panel-desc" id="waiSkillDesc" data-i18n="wai_sk_hint">Click a node above.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO BANNER -->
+  <section class="banner-bej">
+    <div class="container">
+      <h2 class="reveal" data-i18n="man_heading">Not a product. A reaction.</h2>
+      <p class="reveal" data-i18n="wai_man_p">Schematrix has a manifesto — the "why" behind all of this.</p>
+      <p class="reveal" style="margin-top:20px;">
+        <a href="./manifesto.html" class="btn btn-primary" data-i18n="cta_read_manifesto">Read the Manifesto</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p data-i18n="footer_copy">© 2026 Schematrix — Independent Technology Studio</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/schematrix.io" target="_blank">Instagram</a>
+          <span>·</span>
+          <a href="mailto:theindustriesofengineering@gmail.com">theindustriesofengineering@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./i18n.js?v=20260716-3"></script>
+  <script src="./script.js?v=20260716-4"></script>
+</body>
+</html>
