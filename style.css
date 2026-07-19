@@ -1205,38 +1205,24 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   100% { transform: translate(585px, 281px); opacity: 0; }
 }
 
-/* mobile: keep the diagram readable, scroll horizontally with clear affordances */
+/* mobile: scale the whole interactive diagram into the viewport */
 .mv-swipe { display: none; }
 @media (max-width: 768px) {
-  .mesh-viz { min-width: 860px; }
+  .mesh-viz-section .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .mesh-viz {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+  }
   .mesh-viz-scroll {
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    width: 100%;
+    overflow: hidden;
   }
-  .mesh-viz-wrap { position: relative; }
-  /* edge fades to signal there's more content */
-  .mesh-viz-wrap::before, .mesh-viz-wrap::after {
-    content: '';
-    position: absolute; top: 0; bottom: 0;
-    width: 26px;
-    pointer-events: none;
-    z-index: 2;
-  }
-  .mesh-viz-wrap::before { left: 0; background: linear-gradient(90deg, var(--cream), transparent); }
-  .mesh-viz-wrap::after { right: 0; background: linear-gradient(270deg, var(--cream), transparent); }
-  .mv-swipe {
-    display: inline-flex; align-items: center;
-    margin: 0 auto 10px;
-    padding: 6px 14px;
-    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-    font-size: 11px; letter-spacing: 1px;
-    color: var(--text-muted);
-    background: var(--bej-light);
-    border: 1px solid var(--border-bej);
-    border-radius: 999px;
-  }
-  .mesh-viz-wrap { display: flex; flex-direction: column; align-items: center; }
-  .mesh-viz-wrap .mesh-viz-scroll { width: 100%; }
+  .mesh-viz-wrap { width: 100%; }
+  .mv-swipe { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1266,7 +1252,7 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
   border-radius: var(--r-lg);
   padding: 26px 18px 0;
   cursor: pointer;
-  width: min(100%, 420px);
+  width: min(100%, 360px);
 }
 .wai-photo-img { width: 100%; display: block; image-rendering: pixelated; }
 .wai-photo-tag {
@@ -1491,7 +1477,7 @@ footer p { color: var(--text-dim-navy); font-size: 13px; }
 
 @media (max-width: 768px) {
   .wai-hero { grid-template-columns: 1fr; }
-  .wai-photo { max-width: 340px; margin: 0 auto; }
+  .wai-photo { max-width: 300px; margin: 0 auto; }
   .wai-timeline { padding-left: 28px; }
   .wai-tl-item::before { left: -26px; }
 }
