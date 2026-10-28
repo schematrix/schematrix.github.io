@@ -308,7 +308,7 @@
       pd_heading: "HAS_PrepperDisk",
       pd_sub: "İçinde Wikipedia, haritalar, tıbbi kaynaklar ve hayatta kalma kitapları taşıyan, bunları kendi Wi-Fi ağından sunan bir Raspberry Pi 5. İnternet yok, bulut yok, hesap yok.",
       pd_img_alt: "Telefonda HAS_PrepperDisk ana sayfası",
-      pd_sum_title: "Çevrimdışı Kitaplık",
+      pd_sum_title: "Çevrimdışı İnternet",
       pd_sum_p1: "Internet-in-a-Box ve Kiwix üzerine kurulu HAS_PrepperDisk, 256 GB'lık bir NVMe SSD'de yaklaşık 170 GB bilgi saklıyor: resimleriyle birlikte İngilizce ve Türkçe Wikipedia'nın tamamı, Avrupa ve Orta Doğu'nun sokak seviyesinde haritaları, su, gıda, ilk yardım, tamir ve şebekeden bağımsız yaşam üzerine seçilmiş bir kitaplık.",
       pd_sum_p2: "Pi kendi şifreli Wi-Fi ağını yayınlıyor. Herhangi bir telefon ya da bilgisayarla bağlandığında ana sayfa kendiliğinden açılıyor, uygulama gerekmiyor. Kurulum betikleri, içerik listesi ve ana sayfa GitHub'da.",
       pd_tech_heading: "Donanım & Yazılım",
