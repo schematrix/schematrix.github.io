@@ -45,6 +45,6 @@
       }
       if (!e.isIntersecting) delete v.dataset.inView;
     });
-  }, { threshold: 0.6 });
+  }, { threshold: 0.25 });
   videos.forEach((v) => io.observe(v));
 })();
