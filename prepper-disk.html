@@ -6,7 +6,7 @@
   <title data-i18n="pd_title">Schematrix | HAS_PrepperDisk</title>
   <meta name="description" content="An open-source offline knowledge archive on a Raspberry Pi 5: Wikipedia, maps, medical and survival library served over its own Wi-Fi hotspot." data-i18n-content="pd_meta" />
   <meta name="theme-color" content="#F2F0EB" />
-  <link rel="stylesheet" href="./style.css?v=20261028-1" />
+  <link rel="stylesheet" href="./style.css?v=20261028-3" />
 </head>
 <body>
 
@@ -44,7 +44,9 @@
 
       <div class="project-detail-grid">
         <div class="project-gallery project-gallery-single reveal">
-          <img src="./images/prepper_disk_product.jpg" alt="HAS_PrepperDisk homepage on a phone" data-i18n-alt="pd_img_alt" />
+          <video autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate nofullscreen" poster="./images/prepper_disk_poster.jpg">
+            <source src="./images/prepper_disk_product.mp4" type="video/mp4" />
+          </video>
         </div>
 
         <aside class="project-summary reveal">
@@ -105,6 +107,66 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- EXPLODED VIEW -->
+  <section class="xv" aria-labelledby="xv-title">
+    <div class="xv-sticky">
+      <div class="xv-head">
+        <div class="section-label" data-i18n="pd_xv_label">Anatomy</div>
+        <h3 id="xv-title" data-i18n="pd_xv_heading">Seven Parts, One Library</h3>
+        <p data-i18n="pd_xv_sub">Scroll to put it together.</p>
+      </div>
+
+      <div class="xv-stage">
+        <div class="xv-case xv-case-bottom" aria-hidden="true">
+          <img src="./images/prepper/case-bottom.webp" alt="" />
+        </div>
+        <div class="xv-part" style="--pw:.92; --ey:.50; --ay:.20;">
+          <img src="./images/prepper/pi5.webp" alt="Raspberry Pi 5" />
+          <div class="xv-label left"><span data-i18n="pd_xv_pi">Raspberry Pi 5</span></div>
+        </div>
+        <div class="xv-part" style="--pw:.56; --ey:.17; --ay:.07;">
+          <img src="./images/prepper/cooler.webp" alt="Active cooler" data-i18n-alt="pd_xv_cooler" />
+          <div class="xv-label"><span data-i18n="pd_xv_cooler">Active cooler</span></div>
+        </div>
+        <div class="xv-part" style="--pw:.66; --ph:.11; --ey:-.08; --ay:.01;">
+          <div class="xv-row">
+            <img src="./images/prepper/standoff-1.webp" alt="" />
+            <img src="./images/prepper/standoff-2.webp" alt="" />
+            <img src="./images/prepper/standoff-3.webp" alt="" />
+            <img src="./images/prepper/standoff-4.webp" alt="" />
+          </div>
+          <div class="xv-label left"><span data-i18n="pd_xv_standoffs">Brass standoffs</span></div>
+        </div>
+        <div class="xv-part xv-flat" style="--pw:.84; --ey:-.30; --ay:-.04;">
+          <img src="./images/prepper/hat.webp" alt="M.2 HAT" />
+          <div class="xv-label"><span data-i18n="pd_xv_hat">M.2 PCIe HAT</span></div>
+        </div>
+        <div class="xv-part xv-flat" style="--pw:.68; --ey:-.51; --ay:-.08;">
+          <img src="./images/prepper/ssd.webp" alt="NVMe SSD" />
+          <div class="xv-label left"><span data-i18n="pd_xv_ssd">256 GB NVMe SSD</span></div>
+        </div>
+        <div class="xv-part" style="--pw:.66; --ph:.07; --ey:-.70; --ay:-.12;">
+          <div class="xv-row">
+            <img src="./images/prepper/screw-1.webp" alt="" />
+            <img src="./images/prepper/screw-2.webp" alt="" />
+            <img src="./images/prepper/screw-3.webp" alt="" />
+            <img src="./images/prepper/screw-4.webp" alt="" />
+          </div>
+          <div class="xv-label"><span data-i18n="pd_xv_screws">Mounting screws</span></div>
+        </div>
+
+        <div class="xv-case xv-case-top">
+          <img src="./images/prepper/case-top.webp" alt="3D-printed case" data-i18n-alt="pd_xv_case" />
+        </div>
+
+        <div class="xv-done">
+          <strong data-i18n="pd_xv_done">~170 GB of offline knowledge</strong>
+          <span data-i18n="pd_xv_done_sub">No internet required.</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -173,5 +235,6 @@
 
   <script src="./i18n.js?v=20261028-1"></script>
   <script src="./script.js?v=20261028-1"></script>
+  <script src="./prepper-exploded.js?v=20261028-2"></script>
 </body>
 </html>
