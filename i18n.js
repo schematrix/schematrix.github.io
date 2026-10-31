@@ -63,6 +63,8 @@
       pd_uc5_p: "iFixit guides plus Q&A archives on home repair, gardening, ham radio and vehicle repair.",
       pd_uc6_h: "Zero-Setup Access",
       pd_uc6_p: "Join the Wi-Fi and the homepage opens on its own. Works on any phone, no app needed.",
+      pd_video_heading: "See How It Works",
+      pd_video_sub: "The full build, from the parts on the desk to a phone opening Wikipedia with no internet.",
 
       /* Home */
       home_title: "Schematrix | Home",
@@ -341,6 +343,8 @@
       pd_uc5_p: "iFixit rehberleri ve ev tamiri, bahçecilik, amatör telsiz, araç bakımı üzerine soru-cevap arşivleri.",
       pd_uc6_h: "Kurulumsuz Erişim",
       pd_uc6_p: "Wi-Fi'a bağlan, ana sayfa kendiliğinden açılsın. Her telefonda çalışır, uygulama gerekmez.",
+      pd_video_heading: "Nasıl Çalıştığını Gör",
+      pd_video_sub: "Masadaki parçalardan internetsiz Wikipedia açan bir telefona kadar, projenin tamamı.",
 
       /* Ana Sayfa */
       home_title: "Schematrix | Ana Sayfa",
